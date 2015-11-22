@@ -39,7 +39,7 @@ namespace WebApplication1.userVerify.login
             context.Response.Write(isRight.ToString());  // 将结果返回给客户端
         }
 
-        protected string paraseBase64(string rawPwd)
+        public string paraseBase64(string rawPwd)
         {
             string pwd = "";
 
@@ -47,7 +47,7 @@ namespace WebApplication1.userVerify.login
         }
 
 
-        protected string md5Value(string pwd)
+        public string md5Value(string pwd)
         {
             string md5Pwd = "";
 

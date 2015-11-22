@@ -61,6 +61,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="userVerify\createAccount\createTheAccount.ashx.cs">
+      <DependentUpon>createTheAccount.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="userVerify\createAccount\getCaptchValue.ashx.cs">
+      <DependentUpon>getCaptchValue.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="userVerify\createAccount\isAccountExists.ashx.cs">
+      <DependentUpon>isAccountExists.ashx</DependentUpon>
+    </Compile>
     <Compile Include="userVerify\login\getHeadImg.ashx.cs">
       <DependentUpon>getHeadImg.ashx</DependentUpon>
     </Compile>
@@ -75,6 +84,9 @@
     <Content Include="userVerify\login\getHeadImg.ashx" />
     <Content Include="userVerify\login\setServerToken.ashx" />
     <Content Include="userVerify\login\verifyUserLogin.ashx" />
+    <Content Include="userVerify\createAccount\isAccountExists.ashx" />
+    <Content Include="userVerify\createAccount\getCaptchValue.ashx" />
+    <Content Include="userVerify\createAccount\createTheAccount.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
