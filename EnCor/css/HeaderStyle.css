@@ -26,7 +26,7 @@
 }
 
 .header_wrapper {
-    margin: 0 auto;
+    margin: auto;
     margin-top: 3px;
     width: 78%;
     height: 30px;
@@ -44,10 +44,6 @@
     float: left;
     width: 120px;
     height: 50px;
-    /*background-color: #f5f5f5;*/
-    -webkit-background-image: url(../image/EnCor_logo.png);
-    -moz-background-image: url(../image/EnCor_logo.png);
-    background-image: url(../image/EnCor_logo.png);
 
     /*-webkit-box-shadow: #666 0px 0px 10px;*/
     /*-moz-box-shadow: #666 0px 0px 10px;*/
@@ -87,4 +83,13 @@
 
 .userName div{
     color: #3f41ff;
+}
+
+.nav a:hover{
+    margin: 0 auto;
+    margin: 5px;
+    width: 30px;
+    height: 100%;
+    border-radius: 5px;
+    background-color: #ffffff;
 }
