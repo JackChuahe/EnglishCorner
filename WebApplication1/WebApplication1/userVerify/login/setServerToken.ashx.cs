@@ -18,7 +18,8 @@ namespace WebApplication1.userVerify.login
             //先生成一个token字符串
             string token = Environment.TickCount.ToString();   // 确定位数
             context.Session["token"] = token;
-
+            context.Session["tokenLength"] = token.Length;     // 将token的lenth记录下来
+  
             context.Response.Write(token);  // 返回token
         }
 
