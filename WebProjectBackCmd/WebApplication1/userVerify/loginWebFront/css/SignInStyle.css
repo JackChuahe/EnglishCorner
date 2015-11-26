@@ -1,0 +1,149 @@
+.signBody {
+    margin: 0px;
+    font-family: 'Microsoft YaHei UI';
+    background-color: #ffffff;
+}
+
+.mainBox {
+    width: 500px;
+    margin: auto;
+}
+
+.titleBox {
+    width: 340px;
+    height: 120px;
+    margin: auto;
+}
+
+.logo {
+    width: 120px;
+    height: 50px;
+    margin: auto;
+}
+
+.title {
+    width: 320px;
+    margin: auto;
+    font-size: large;
+    color: rgba(87, 87, 87, 0.89);
+
+}
+
+.signBox {
+    width: 340px;
+    height: 360px;
+    margin: auto;
+    background-color: #f7f7f7;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    box-shadow: #b3b3b3 0px 2px 2px;
+    -webkit-box-shadow: #b3b3b3 0px 2px 2px;
+    -moz-box-shadow: #b3b3b3 0px 2px 2px;
+}
+
+.headPic {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+}
+
+.headPic img {
+    width: 100px;
+    height: 100px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+}
+
+.input {
+    width: 250px;
+    height: 90px;
+    margin: auto;
+}
+
+.input input {
+    padding: 5px;
+    width: 240px;
+    height: 30px;
+    font-family: "Microsoft JhengHei UI";
+    font-size: medium;
+    border-style: none;
+    box-shadow: #262626 0px 0px 1px;
+
+}
+
+.warning {
+    width: 240px;
+    margin: auto;
+}
+
+#Error {
+    margin: auto;
+    width: 240px;
+    color: red;
+    font-size: small;
+}
+
+.btn {
+    width: 250px;
+    margin: auto;
+    border-radius: 3px;
+    background-color: #4d90fe;
+}
+
+.submit {
+    width: 250px;
+    height: 36px;
+    margin: auto;
+    border-radius: 4px;
+    border: 1px solid #2f5bb7;
+    color: #fff;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+    background-color: #357ae8;
+}
+
+.submit:hover {
+    margin: auto;
+    border: 1px solid #2f5bb7;
+    color: #fff;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+    background-color: #357ae8;
+    background-image: -webkit-linear-gradient(top, #4d90fe, #357ae8);
+    background-image: -moz-linear-gradient(top, #4d90fe, #357ae8);
+    background-image: -ms-linear-gradient(top, #4d90fe, #357ae8);
+    background-image: -o-linear-gradient(top, #4d90fe, #357ae8);
+    background-image: linear-gradient(top, #4d90fe, #357ae8);
+}
+
+.more{
+    width: 240px;
+    margin: auto;
+    font-family: "Microsoft JhengHei UI";
+    font-size: small;
+
+}
+
+a{
+    margin-left: 10px;
+    color: #367be8;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #02ace5;
+    text-decoration: underline;
+}
+
+.register{
+    padding-top: 20px;
+    width: 142px;
+    margin: auto;
+    font-family: "Microsoft JhengHei UI";
+
+    font-size: 14px;
+}
