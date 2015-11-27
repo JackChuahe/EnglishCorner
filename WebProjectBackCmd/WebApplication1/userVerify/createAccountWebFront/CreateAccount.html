@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create your EnCor account</title>
+
+    <link href="../../common/cssFrame/HeaderStyle.css" rel="stylesheet" />
+    <link href="css/CreateAccountStyle.css" type="text/css" rel="stylesheet">
+</head>
+<body class="createbody">
+<!-- 悬浮标题框 -->
+<div class="header">
+    <div class="floatHeader">
+        <div>
+            <a id="logo" class="logo">
+                <img src="../../common/image/EnCor_logo.png" style="width: inherit;height: 47px" />
+            </a>
+        </div>
+        <div>
+            <a id="userHeadPic" class="userHeadPic" href="#">
+                <img src="../../common/image/headimg.png" />
+            </a>
+        </div>
+        <div>
+            <div id="userName" class="userName">
+                <div>name</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 主框体 -->
+<div class="createmainBox">
+    <div style="height:40px"></div>
+    <header class="titleSlogan" style="width:400px ;margin:auto;">
+        <p >Create your EnCor Account</p>
+    </header>
+    <!-- 左窗体 -->
+    <div class="leftBox">
+        <div class="createimg">
+            <img src="../../common/image/Z.jpg">
+        </div>
+    </div>
+    <!-- 右窗体-->
+    <div class="rightBox">
+        <div class="content">
+
+            <p>Name</p>
+
+            <div class="nameInput">
+                <input id="FirstName" type="text" placeholder="First" maxlength="15">
+                <input id="LastName" type="text" placeholder="Last" maxlength="15">
+            </div>
+
+            <p>Input your email address</p>
+
+            <div class="longInput">
+                <input type="text" id="email" placeholder="xxx@xx.com" maxlength="25">
+            </div>
+
+            <p>Create a password</p>
+
+            <div class="longInput">
+                <input type="password" id="password" placeholder="Password" maxlength="20">
+            </div>
+
+            <p>Confirm your password</p>
+
+            <div class="longInput">
+                <input type="password" id="ConfirmPassword" placeholder="Confirm Password" maxlength="20">
+            </div>
+
+            <p>Birthday</p>
+
+            <div class="birthdayInput">
+                <input id="day" type="number" placeholder="day">
+                <span>-</span>
+                <input id="month" type="number" placeholder="month">
+                <span>-</span>
+                <input id="year" type="number" placeholder="year">
+            </div>
+
+            <p>Gender</p>
+
+            <div>
+                <select name="gender" id="gender" class="gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+
+            <p>Prove you’re not a robot</p>
+
+            <div>
+                <div class="confirmPic">
+                    <img id="confirmPic" src="../../common/image/EnCor_logo.png" width="280" height="50px">
+                </div>
+                <div class="confirmPic">
+                    <article>Type the text:</article>
+                    <input id="confirmCode" type="text" placeholder="Confirm Code" maxlength="10">
+
+                    <div class="recaptcha-buttons">
+                        <a id="recaptcha_reload_btn" display="static" href="javascript:changePic()"
+                           title="Get a new challenge"></a>
+                    </div>
+                    <div class="clear" style="height: 5px"></div>
+                </div>
+            </div>
+
+                <div class="btn">
+                    <input type="button" name="sign_In" value="Sign in"
+                           onclick=""
+                           id="sign_In" class="submit">
+                </div>
+           <div class="clear"></div>
+            <p style="color: #8f8f8f">.about why we ask for this information.</p>
+        </div>
+    </div>
+</div>
+
+<!--清除浮动-->
+<div class="clear"></div>
+</body>
+</html>

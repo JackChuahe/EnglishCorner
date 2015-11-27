@@ -12,15 +12,13 @@ $(document).ready(function () {
             error.innerHTML = "";
             //获取头像开始
             
-            $.get("../login/getHeadImg.ashx", { userEmail: $("#email").val() }, function (data) {
-                var imgUrl = data;
+            $.get("../login/getHeadImg.ashx", { userEmail: $("#email").val() }, function (imgUrl) {
                 //alert(imgUrl);
- 
                 if (imgUrl.length > 0) {
                    // alert(imgUrl);
                     var img = document.getElementById("headImg");
                    // alert(img.src);
-                    img.src = data;
+                    img.src = imgUrl;
                 }
             });
         } else {
@@ -29,7 +27,7 @@ $(document).ready(function () {
         }
     });
 
-
+    // 登录
     $("#sign_In").on("click", function () {
 
         var pwd = document.getElementById("password").value;
@@ -51,7 +49,8 @@ $(document).ready(function () {
                 var encodePwd = $.base64.btoa(tempPwd);
 
                 // 向后台传入用户名和密码
-                $.get("../login/verifyUserLogin.ashx", { userEmail: email, password: encodePwd }, function (isRight) {
+                $.post("../login/verifyUserLogin.ashx", { userEmail: email, password: encodePwd }, function (isRight) {
+                    //alert(isRight);
                     if (isRight == 'True') {
 
                         // 登录成功！

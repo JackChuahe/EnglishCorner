@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.OracleClient;
+using System.Configuration;
 
 namespace WebApplication1.userVerify.login
 {
@@ -25,17 +26,30 @@ namespace WebApplication1.userVerify.login
              *  若数据库中有该人的头像则为 true， 并返回url 赋值给程序中的变量string url,否则为false 
              */
             {
-                string connectionString = "Data Source=222.196.200.38/orcl.196.200.45;User ID=encor;PassWord=encor";
-                string queryString = "select HEADIMAGEURL from allusers where useremail='" + userEmail + "'"; 
+                string connectionString = ConfigurationManager.ConnectionStrings["oracleCon"].ConnectionString;
                 OracleConnection myConnection = new OracleConnection(connectionString);
-                OracleCommand myORACCommand = myConnection.CreateCommand();
-                myORACCommand.CommandText = queryString;
-                myConnection.Open();
-                OracleDataReader myDataReader = myORACCommand.ExecuteReader();
-                if (myDataReader.Read())
+                // 调用userVerifyPK包下面的 function getUserHeadImg(email in varchar) return varchar 方法
+                OracleCommand myORACCommand = new OracleCommand("userVerifyPK.getUserHeadImg", myConnection);
+                myORACCommand.CommandType = System.Data.CommandType.StoredProcedure;   // 设置访问类型为存储类型
+                //设置参数  
+                OracleParameter[] prams = { 
+                                          new OracleParameter("email", OracleType.VarChar,50),  // in
+                                          new OracleParameter("url",OracleType.VarChar,50)   // 接收 return 返回值
+                                      };
+                prams[0].Direction = System.Data.ParameterDirection.Input;         // 设置参数类型 in  out in out 或者 return类型
+                prams[1].Direction = System.Data.ParameterDirection.ReturnValue;     // 设置为返回值类型。
+                // 将参数赋值
+                prams[0].Value = userEmail;
+                //加入到连接实例中
+                for (int i = 0; i < prams.Length; i++)
                 {
-                    url = (string)myDataReader[0];
+                    myORACCommand.Parameters.Add(prams[i]);
                 }
+                //连接oracle数据库
+                myConnection.Open();
+                myORACCommand.ExecuteNonQuery();      // 执行过程
+                url = prams[1].Value.ToString();         // 获取返回值
+                myConnection.Close();  // 关闭数据库连接
             }
 
             context.Response.Write(url);   // 返回头像url

@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.SessionState;
 using System.Data.OracleClient;
+using System.Configuration;
+using WebApplication1.common.class_;
+
 namespace WebApplication1.userVerify.login
 {
     /// <summary>
@@ -19,31 +22,50 @@ namespace WebApplication1.userVerify.login
             bool isRight = false;
 
             // 取得客户端传来的密码
-            string userEmail = context.Request.QueryString["userEmail"];
-            string rawPwd = context.Request.QueryString["password"];
+            string userEmail = context.Request.Form["userEmail"];
+            string rawPwd = context.Request.Form["password"];
+
+
+            //string userEmail = context.Request.QueryString["userEmail"];
+            //string rawPwd = context.Request.QueryString["password"];
             //先进行base64解码
-            string pwdWithToken = paraseBase64(rawPwd);
+            string pwdWithToken = MyBase64.decodeBase64(rawPwd);
             // 去token
             string pwd = deleteToken(pwdWithToken,context.Session["token"].ToString());
             //再进行md5 加密
-            //string md5Pwd = md5Value(pwd);
-
+            string md5Pwd = Md5.endcodeMd5(pwd);       // 调用md5类 
 
             {
-                string connectionString = "Data Source=222.196.200.38/orcl.196.200.45;User ID=encor;PassWord=encor";
-                string queryString = "select count(*) from allusers where useremail='" + userEmail + "' and pwd='"+pwd+"'";
+                string connectionString = ConfigurationManager.ConnectionStrings["oracleCon"].ConnectionString;   //获取 webConfig 文件中的 数据库连接字符串
                 OracleConnection myConnection = new OracleConnection(connectionString);
-                OracleCommand myORACCommand = myConnection.CreateCommand();
-                myORACCommand.CommandText = queryString;
-                myConnection.Open();
-                OracleDataReader myDataReader = myORACCommand.ExecuteReader();
-                myDataReader.Read();  //读取行记录
-                int n = myDataReader.GetInt32(0);
-                if (n == 1)
+                OracleCommand myOracleCommand = new OracleCommand("userVerifyPK.verifyLogin", myConnection); // 调用过程
+                myOracleCommand.CommandType = System.Data.CommandType.StoredProcedure;  // 设置访问类型为存储过程
+                //设置参数
+                OracleParameter[] paramters = {
+                        new OracleParameter("v_userEmail",OracleType.VarChar,50),
+                        new OracleParameter("v_pwd",OracleType.VarChar,80),
+                        new OracleParameter("isRight",OracleType.VarChar,2)   // 返回 '1' 代表成功 '0' 则失败
+                };
+                //设置参数类型
+                paramters[0].Direction = System.Data.ParameterDirection.Input;
+                paramters[1].Direction = System.Data.ParameterDirection.Input;
+                paramters[2].Direction = System.Data.ParameterDirection.ReturnValue;
+                //设置in 类型参数的值
+                paramters[0].Value = userEmail;
+                paramters[1].Value = md5Pwd;
+                //把参数加入到实体
+                for (int i = 0; i < paramters.Length; i++)
+                {
+                    myOracleCommand.Parameters.Add(paramters[i]);
+                }
+                myConnection.Open();  // 连接数据库
+                myOracleCommand.ExecuteNonQuery();   // 执行过程
+                string result = paramters[2].Value.ToString();  // 获取返回结果
+                if (result.Equals("1"))
                 {
                     isRight = true;
                 }
-                myDataReader.Close();
+
                 myConnection.Close();
             }
 
@@ -61,6 +83,12 @@ namespace WebApplication1.userVerify.login
             context.Response.Write(isRight.ToString());  // 将结果返回给客户端
         }
 
+        /// <summary>
+        /// 去掉密码的token
+        /// </summary>
+        /// <param name="pwdWithToken"></param>
+        /// <param name="token"></param>
+        /// <returns></returns>
         private string deleteToken(string pwdWithToken,string token)
         {
 
@@ -69,20 +97,7 @@ namespace WebApplication1.userVerify.login
             return pwd;
         }
 
-        public string paraseBase64(string rawPwd)
-        {
-            string pwdWithToken = base64(rawPwd, false);
-
-            return pwdWithToken;
-        }
-
-
-        public string md5Value(string pwd)
-        {
-            string md5Pwd = "";
-
-            return md5Pwd;
-        }
+ 
 
         public bool IsReusable
         {
@@ -92,19 +107,5 @@ namespace WebApplication1.userVerify.login
             }
         }
 
-        // base64
-        static public string base64(string s, bool c)
-        {
-            if (c)
-            {
-                //编码
-                return System.Convert.ToBase64String(System.Text.Encoding.Default.GetBytes(s));
-            }
-            else
-            {
-                //解码
-                return System.Text.Encoding.Default.GetString(System.Convert.FromBase64String(s));
-            }
-        }
     }
 }

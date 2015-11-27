@@ -60,23 +60,33 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="common\jquery-1.9.1.min.js" />
+    <Content Include="common\js\jquery-1.9.1.min.js" />
+    <Content Include="common\txt\Email.html" />
     <Content Include="UserHeadImg\601825672%40qq.com_header.jpg" />
-    <Content Include="userVerify\loginWebFront\css\FooterSideBarStyle.css" />
-    <Content Include="userVerify\loginWebFront\css\HeaderStyle.css" />
+    <Content Include="UserHeadImg\993089471%40qq.com_header.jpg" />
+    <Content Include="userVerify\createAccountWebFront\CreateAccount.html" />
+    <Content Include="userVerify\createAccountWebFront\css\CreateAccountStyle.css" />
+    <Content Include="common\cssFrame\HeaderStyle.css" />
+    <Content Include="common\cssFrame\FooterSideBarStyle.css" />
+    <Content Include="userVerify\createAccountWebFront\js\createAccountJS.js" />
     <Content Include="userVerify\loginWebFront\css\MainBoxStyle.css" />
     <Content Include="userVerify\loginWebFront\css\SignInStyle.css" />
-    <Content Include="userVerify\loginWebFront\image\EnCor_logo.png" />
-    <Content Include="userVerify\loginWebFront\image\headimg.png" />
-    <Content Include="userVerify\loginWebFront\image\right_bg.png" />
-    <Content Include="userVerify\loginWebFront\image\Z.jpg" />
+    <Content Include="common\image\EnCor_logo.png" />
+    <Content Include="common\image\headimg.png" />
+    <Content Include="common\image\right_bg.png" />
+    <Content Include="common\image\Z.jpg" />
     <Content Include="userVerify\loginWebFront\SignIn.html" />
     <Content Include="userVerify\loginWebFront\signInJS\jquery.base64.js" />
     <Content Include="userVerify\loginWebFront\signInJS\login.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="common\class_\MyBase64.cs" />
+    <Compile Include="common\class_\Md5.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="userVerify\createAccount\CAPTCHA.ashx.cs">
+      <DependentUpon>CAPTCHA.ashx</DependentUpon>
+    </Compile>
     <Compile Include="userVerify\createAccount\createTheAccount.ashx.cs">
       <DependentUpon>createTheAccount.ashx</DependentUpon>
     </Compile>
@@ -85,6 +95,9 @@
     </Compile>
     <Compile Include="userVerify\createAccount\isAccountExists.ashx.cs">
       <DependentUpon>isAccountExists.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="userVerify\createAccount\setServerToken.ashx.cs">
+      <DependentUpon>setServerToken.ashx</DependentUpon>
     </Compile>
     <Compile Include="userVerify\login\getHeadImg.ashx.cs">
       <DependentUpon>getHeadImg.ashx</DependentUpon>
@@ -103,6 +116,8 @@
     <Content Include="userVerify\createAccount\isAccountExists.ashx" />
     <Content Include="userVerify\createAccount\getCaptchValue.ashx" />
     <Content Include="userVerify\createAccount\createTheAccount.ashx" />
+    <Content Include="userVerify\createAccount\CAPTCHA.ashx" />
+    <Content Include="userVerify\createAccount\setServerToken.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -15,7 +15,7 @@ namespace WebApplication1.userVerify.createAccount
         public void ProcessRequest(HttpContext context)
         {
             context.Response.ContentType = "text/plain";
-            string captch = context.Session["captch"].ToString();   // 获取验证码值
+            string captch = context.Session["Captcha"].ToString();   // 获取验证码值
 
             context.Response.Write(captch);  //返回给前端
         }
