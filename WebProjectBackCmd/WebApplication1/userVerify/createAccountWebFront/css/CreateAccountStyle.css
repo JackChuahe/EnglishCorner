@@ -1,6 +1,7 @@
 .createbody{
     margin: 0px;
     font-family: "Microsoft YaHei UI";
+    color: #777777;
 }
 .createmainBox {
     width: 980px;
@@ -23,7 +24,7 @@
 .rightBox {
     margin-left: 20px;
     width: 340px;
-    height: 620px;
+    height: 560px;
     background-color: #f1f1f1;
     border-radius: 3px;
     -webkit-box-shadow: #b3b3b3 0px 2px 2px;
@@ -47,6 +48,7 @@
     height: 20px;
 }
 .content p{
+    margin-top: 20px;
     font-size: small;
     height: 5px;
     /*background-color: #8f8f8f ;*/
@@ -57,6 +59,7 @@
     border-radius: 3px;
     border-style: none;
     box-shadow: #575757 0px 0px 1px;
+    -webkit-box-shadow:  #575757 0px 0px 1px;
 }
 .nameInput input{
     width:132px ;
@@ -150,3 +153,6 @@ select{
     background-image: -o-linear-gradient(top, #4d90fe, #357ae8);
     background-image: linear-gradient(top, #4d90fe, #357ae8);
 }
+
+::-webkit-input-placeholder {text-align:right}
+:-ms-input-placeholder{text-align:right}

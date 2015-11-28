@@ -9,6 +9,7 @@ using System.Configuration;
 using System.Data.OracleClient;
 using System.IO;
 using System.Text;
+using System.Web.SessionState;
 namespace WebApplication1.userVerify.createAccount
 {
     /// <summary>
@@ -16,7 +17,7 @@ namespace WebApplication1.userVerify.createAccount
     /// 当注册页面的验证码通过  邮箱确认无误后,就可以开始提交数据了
     /// 这个部分主要是实现用户注册,插入到数据库,并且发出激活邮箱
     /// </summary>
-    public class createTheAccount : IHttpHandler
+    public class createTheAccount : IHttpHandler, IRequiresSessionState
     {
 
         public void ProcessRequest(HttpContext context)
@@ -33,7 +34,6 @@ namespace WebApplication1.userVerify.createAccount
             //首先获得用户的各种信息,应该是post请求中查询字符串或者是json数据
             //解析出基本的信息包括userEmail
             //首先发送邮箱验证码,若邮箱验证码能正常发送成功的话,那么就进行下面加密密码并的插入到数据库
-
 
             if (!sendEmail(userEmail))   //  如果发送失败
             {
@@ -139,7 +139,12 @@ namespace WebApplication1.userVerify.createAccount
         /// <returns></returns>
         private string getBody(string userEmail)
         {
-            string path = "../../common/txt/Email.html";
+
+            //string sPath = System.IO.Path.GetDirectoryName(context.Request.PhysicalPath);
+            string sPath = System.Web.HttpContext.Current.Request.MapPath("/");
+            //string path2 = System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName;
+            //string path3 = System.Environment.CurrentDirectory;
+            string path = sPath + "common\\txt\\Email.html";
             string href = "222.196.200.38";
             StreamReader sr = new StreamReader(path, Encoding.Default);
             String line;
@@ -149,8 +154,8 @@ namespace WebApplication1.userVerify.createAccount
                 body += line;
             }
             sr.Close();
-            body.Replace("NO1REPLACE",userEmail);
-            body.Replace("NO2REPLACE", href);
+            body = body.Replace("NO1REPLACE", userEmail);
+            body = body.Replace("NO2REPLACE", href);
             return body;
         }
 

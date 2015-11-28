@@ -62,12 +62,14 @@
   <ItemGroup>
     <Content Include="common\js\jquery-1.9.1.min.js" />
     <Content Include="common\txt\Email.html" />
+    <Content Include="testCommon.html" />
     <Content Include="UserHeadImg\601825672%40qq.com_header.jpg" />
     <Content Include="UserHeadImg\993089471%40qq.com_header.jpg" />
-    <Content Include="userVerify\createAccountWebFront\CreateAccount.html" />
-    <Content Include="userVerify\createAccountWebFront\css\CreateAccountStyle.css" />
     <Content Include="common\cssFrame\HeaderStyle.css" />
     <Content Include="common\cssFrame\FooterSideBarStyle.css" />
+    <Content Include="UserHeadImg\default.png" />
+    <Content Include="userVerify\createAccountWebFront\CreateAccount.html" />
+    <Content Include="userVerify\createAccountWebFront\css\CreateAccountStyle.css" />
     <Content Include="userVerify\createAccountWebFront\js\createAccountJS.js" />
     <Content Include="userVerify\loginWebFront\css\MainBoxStyle.css" />
     <Content Include="userVerify\loginWebFront\css\SignInStyle.css" />
@@ -76,13 +78,18 @@
     <Content Include="common\image\right_bg.png" />
     <Content Include="common\image\Z.jpg" />
     <Content Include="userVerify\loginWebFront\SignIn.html" />
-    <Content Include="userVerify\loginWebFront\signInJS\jquery.base64.js" />
+    <Content Include="common\js\jquery.base64.js" />
     <Content Include="userVerify\loginWebFront\signInJS\login.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="common\class_\MyBase64.cs" />
     <Compile Include="common\class_\Md5.cs" />
+    <Compile Include="common\HttpRequest\getHeadImgAndUserEmail.ashx.cs">
+      <DependentUpon>getHeadImgAndUserEmail.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="userVerify\createAccount\CAPTCHA.ashx.cs">
       <DependentUpon>CAPTCHA.ashx</DependentUpon>
@@ -118,6 +125,7 @@
     <Content Include="userVerify\createAccount\createTheAccount.ashx" />
     <Content Include="userVerify\createAccount\CAPTCHA.ashx" />
     <Content Include="userVerify\createAccount\setServerToken.ashx" />
+    <Content Include="common\HttpRequest\getHeadImgAndUserEmail.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

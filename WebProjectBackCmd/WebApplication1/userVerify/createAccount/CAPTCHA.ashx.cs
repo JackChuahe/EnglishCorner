@@ -23,7 +23,7 @@ namespace WebApplication1.userVerify.createAccount
             setCaptchaString(context);
 
             int iHeight = 80;
-            int iWidth = 300;
+            int iWidth = 250;
             Random oRandom = new Random();
 
             int[] aBackgroundNoiseColor = new int[] { 150, 150, 150 };

@@ -34,7 +34,7 @@ namespace WebApplication1.userVerify.login
             string pwd = deleteToken(pwdWithToken,context.Session["token"].ToString());
             //再进行md5 加密
             string md5Pwd = Md5.endcodeMd5(pwd);       // 调用md5类 
-
+            //md5Pwd = "    "
             {
                 string connectionString = ConfigurationManager.ConnectionStrings["oracleCon"].ConnectionString;   //获取 webConfig 文件中的 数据库连接字符串
                 OracleConnection myConnection = new OracleConnection(connectionString);

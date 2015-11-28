@@ -55,7 +55,7 @@ $(document).ready(function () {
 
                         // 登录成功！
                         //... 跳转到另外的页面
-
+                        alert("Login OK");
                     } else {
                         alert("Wrong password or Email !Please check!");
                     }
