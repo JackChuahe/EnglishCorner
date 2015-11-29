@@ -1,0 +1,218 @@
+.clear {
+    clear: both;
+}
+
+@media screen and (min-width: 700px) {
+    .createmainBox {
+        width: 980px;
+        /*height: 1000px;*/
+        margin: 0 auto;
+    }
+
+    .leftBox {
+        width: 500px;
+        /*background-color: #8007f2;*/
+        float: left;
+    }
+
+    .createimg img {
+        margin-top: 30px;
+        width: 500px;
+    }
+
+    .rightBox {
+        margin-left: 20px;
+        width: 340px;
+        background-color: #f1f1f1;
+        border-radius: 2px;
+        -webkit-box-shadow: #b3b3b3 0px 2px 2px;
+        -moz-box-shadow: #b3b3b3 0px 2px 2px;
+        box-shadow: #b3b3b3 0px 2px 2px;
+        float: right;
+    }
+
+}
+
+@media screen and (max-width: 700px) {
+    .leftBox {
+        width: 0px;
+        height: 0px;
+        margin: 0px;
+        /*background-color: #f2f2f2;*/
+    }
+
+    .createimg img {
+        margin: 0px;
+        width: 0px;
+
+    }
+
+    .createmainBox {
+        width: 400px;
+        /*height: 1000px;*/
+        margin: 0 auto;
+    }
+
+    .rightBox {
+
+        width: 340px;
+        height: 560px;
+        background-color: #f1f1f1;
+        border-radius: 2px;
+        -webkit-box-shadow: #b3b3b3 0px 2px 2px;
+        -moz-box-shadow: #b3b3b3 0px 2px 2px;
+        box-shadow: #b3b3b3 0px 2px 2px;
+        margin: auto;
+        margin-left: 20px;
+    }
+}
+
+.titleSlogan p {
+    font-family: "Microsoft JhengHei UI Light";
+    font-size: xx-large;
+    color: #787878;
+}
+
+.content {
+    margin: auto;
+    padding: 20px;
+}
+
+.content p {
+    margin-top: 5px;
+    font-size: small;
+    height: 5px;
+    font-family: 'Open Sans', Arial;
+    /*background-color: #8f8f8f ;*/
+}
+
+.content input {
+    padding: 5px;
+    height: 16px;
+    border-radius: 1px;
+    border-style: none;
+    box-shadow: #575757 0px 0px 1px;
+    -webkit-box-shadow: #575757 0px 0px 1px;
+}
+
+.nameInput input {
+    width: 132px;
+}
+
+#LastName {
+    margin-left: 6px;
+}
+
+.longInput input {
+    width: 285px;
+}
+
+.birthdayInput input {
+    width: 77px;
+}
+
+select {
+    width: 85px;
+    height: 30px;
+    padding: 5px;
+    border-style: none;
+    border-radius: 3px;
+    box-shadow: #8f8f8f 0px 0px 2px;
+}
+
+.confirmPic {
+    padding: 3px;
+    background-color: white;
+    box-shadow: #8f8f8f 0px 0px 2px;
+}
+
+.confirmPic input {
+    margin: 5px;
+    width: 180px;
+
+}
+
+.confirmPic article {
+    margin-top: 3px;
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+.btn {
+    width: 80px;
+    height: 30px;
+    margin: auto;
+    border-radius: 3px;
+    background-color: #4d90fe;
+    margin-top: 10px;
+    float: right;
+}
+
+.btn input {
+    width: 80px;
+    height: 30px;
+}
+
+.submit {
+    margin: auto;
+    border-radius: 2px;
+    border: 1px solid #2f5bb7;
+    color: #fff;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+    background-color: #357ae8;
+}
+
+.submit:hover {
+    margin: auto;
+    color: #fff;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+    background-color: #357ae8;
+    background-image: -webkit-linear-gradient(top, #4d90fe, #357ae8);
+    background-image: -moz-linear-gradient(top, #4d90fe, #357ae8);
+    background-image: -ms-linear-gradient(top, #4d90fe, #357ae8);
+    background-image: -o-linear-gradient(top, #4d90fe, #357ae8);
+    background-image: linear-gradient(top, #4d90fe, #357ae8);
+}
+
+::-webkit-input-placeholder {
+    text-align: right
+}
+
+:-ms-input-placeholder {
+    text-align: right
+}
+
+.err {
+    padding: 4px;
+    height: 12px;
+    color: #da3c07;
+}
+
+.err p {
+    margin-top: -4px;
+}
+
+#change {
+    margin-left: 40px;
+}
+
+#change img {
+    width: 21px;
+}
+#change img:hover{
+    background-image: url("../imgSrc/reload.png");
+}
+.LearnMore{
+    font-family: 'Open Sans', Arial;
+    margin-top: 4px;
+}
+.LearnMore a {
+    width: 100px;
+    color: #1598ff;
+}
+
+.LearnMore {
+    color: #535353;
+    font-size: x-small;
+    width: 220px;
+}

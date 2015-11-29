@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create your EnCor account</title>
+
+    <link href="../../common/cssFrame/HeaderStyle.css" rel="stylesheet" />
+    <link href="css/CreateAccountStyle.css" rel="stylesheet" />
+    <script src="../../common/js/jquery-1.9.1.min.js"></script>
+    <script src="../../common/js/jquery.base64.js"></script>
+    <script src="js/createAccountJS.js"></script>
+</head>
+<body class="body">
+<!-- 悬浮标题框 -->
+<div class="header">
+    <div class="floatHeader">
+        <div>
+            <a href="#" id="logo" class="logo">
+                <img src="../../common/image/EnCor_logo.png" title="logo" style="width: inherit;height: 47px">
+            </a>
+        </div>
+        <div>
+            <a id="userHeadPic" class="userHeadPic" href="#">
+                <img src="../../common/image/headimg.png">
+            </a>
+        </div>
+        <div>
+            <a href="#" id="userName" class="userName">
+                <div>name</div>
+            </a>
+
+            <div class="signBtn">
+                <input type="button" name="Sign in" value="Sign in"
+                       onclick=""
+                       id="sign_In" class="sign">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 主框体 -->
+<div class="createmainBox">
+    <div style="height: 60px"></div>
+    <!--标题-->
+    <header class="titleSlogan" style="width:400px ;margin:auto;">
+        <p>Create your EnCor Account</p>
+    </header>
+    <!-- 左窗体 -->
+    <div class="leftBox">
+        <div class="createimg">
+            <img src="../../common/image/Z.jpg">
+        </div>
+    </div>
+    <!-- 右窗体-->
+    <div class="rightBox">
+        <div class="content">
+
+            <p>Name</p>
+
+            <div  class="nameInput">
+                <input id="FirstName" type="text" placeholder="First" maxlength="15">
+                <input id="LastName" type="text" placeholder="Last" maxlength="15">
+
+                <div class="err"><p id="nameInputError"></p></div>
+            </div>
+
+            <p>Input your email address</p>
+
+            <div  class="longInput">
+                <input type="text" id="email" placeholder="xxx@xx.com" maxlength="25">
+
+                <div class="err"><p id="emailInputError"></p></div>
+            </div>
+
+            <p>Create a password</p>
+
+            <div  class="longInput">
+                <input type="password" id="password" maxlength="20">
+
+                <div class="err"><p id="passwordInputError"></p></div>
+            </div>
+
+            <p>Confirm your password</p>
+
+            <div class="longInput">
+                <input type="password" id="ConfirmPassword" maxlength="20">
+
+                <div class="err"><p id="confirmPasswordInputError"></p></div>
+            </div>
+
+
+            <p>Prove you’re not a robot</p>
+
+            <div>
+                <div class="confirmPic">
+                    <img id="confirmPic" src="../../common/image/logo.png" width="294" height="65px">
+                </div>
+                <div class="confirmPic">
+                    <div>
+                        <p>Type the text:</p>
+                    </div>
+                    <input id="confirmCode" type="text" maxlength="10">
+                    <a id="change" href="javascript:changeCaptcha()" title="Get a new challenge">
+                        <img src="imgSrc/reload.png" />
+                    </a>
+
+                    <div class="err" ><p id="captchaError"></p></div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+
+            <div class="btn">
+                <input type="button" name="Next" value="Next"
+                       id="Next" class="submit">
+            </div>
+            <div class="clear"></div>
+            <div class="LearnMore">
+                <a href="#" >Learn more</a>
+                <span> .about why we ask for this information.</span>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!--清除浮动-->
+<div class="clear"></div>
+   <script type="text/javascript">
+       // 刷新验证码图片
+       function changeCaptcha() {
+           var myDate = new Date();
+           document.getElementById("confirmPic").src = "../createAccount/CAPTCHA.ashx?" + "td=" + myDate.getMilliseconds();
+       }
+   </script>
+</body>
+</html>

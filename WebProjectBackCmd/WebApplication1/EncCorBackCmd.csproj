@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FCBE6B73-BA74-4A1B-9B7F-EA1BAE464D80}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApplication1</RootNamespace>
+    <AssemblyName>WebApplication1</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="common\cssFrame\HeaderStyle.css" />
+    <Content Include="common\image\EnCor_logo.png" />
+    <Content Include="common\js\jquery-1.9.1.min.js" />
+    <Content Include="common\txt\Email.html" />
+    <Content Include="testCommon.html" />
+    <Content Include="UserHeadImg\601825672%40qq.com_header.jpg" />
+    <Content Include="UserHeadImg\993089471%40qq.com_header.jpg" />
+    <Content Include="common\cssFrame\FooterSideBarStyle.css" />
+    <Content Include="UserHeadImg\default.png" />
+    <Content Include="userVerify\createAccountWebFront\CreateAccount.html" />
+    <Content Include="userVerify\createAccountWebFront\css\CreateAccountStyle.css" />
+    <Content Include="userVerify\createAccountWebFront\imgSrc\reload.png" />
+    <Content Include="userVerify\createAccountWebFront\js\createAccountJS.js" />
+    <Content Include="userVerify\loginWebFront\css\MainBoxStyle.css" />
+    <Content Include="userVerify\loginWebFront\css\SignInStyle.css" />
+    <Content Include="common\image\headimg.png" />
+    <Content Include="common\image\right_bg.png" />
+    <Content Include="common\image\Z.jpg" />
+    <Content Include="userVerify\loginWebFront\SignIn.html" />
+    <Content Include="common\js\jquery.base64.js" />
+    <Content Include="userVerify\loginWebFront\signInJS\login.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="common\class_\MyBase64.cs" />
+    <Compile Include="common\class_\Md5.cs" />
+    <Compile Include="common\HttpRequest\getHeadImgAndUserEmail.ashx.cs">
+      <DependentUpon>getHeadImgAndUserEmail.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="userVerify\createAccount\CAPTCHA.ashx.cs">
+      <DependentUpon>CAPTCHA.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="userVerify\createAccount\createTheAccount.ashx.cs">
+      <DependentUpon>createTheAccount.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="userVerify\createAccount\getCaptchValue.ashx.cs">
+      <DependentUpon>getCaptchValue.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="userVerify\createAccount\isAccountExists.ashx.cs">
+      <DependentUpon>isAccountExists.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="userVerify\createAccount\setServerToken.ashx.cs">
+      <DependentUpon>setServerToken.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="userVerify\createAccount\userActive.ashx.cs">
+      <DependentUpon>userActive.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="userVerify\login\getHeadImg.ashx.cs">
+      <DependentUpon>getHeadImg.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="userVerify\login\setServerToken.ashx.cs">
+      <DependentUpon>setServerToken.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="userVerify\login\verifyUserLogin.ashx.cs">
+      <DependentUpon>verifyUserLogin.ashx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="userVerify\login\getHeadImg.ashx" />
+    <Content Include="userVerify\login\setServerToken.ashx" />
+    <Content Include="userVerify\login\verifyUserLogin.ashx" />
+    <Content Include="userVerify\createAccount\isAccountExists.ashx" />
+    <Content Include="userVerify\createAccount\getCaptchValue.ashx" />
+    <Content Include="userVerify\createAccount\createTheAccount.ashx" />
+    <Content Include="userVerify\createAccount\CAPTCHA.ashx" />
+    <Content Include="userVerify\createAccount\setServerToken.ashx" />
+    <Content Include="common\HttpRequest\getHeadImgAndUserEmail.ashx" />
+    <Content Include="userVerify\createAccount\userActive.ashx" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>5672</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:5672/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
