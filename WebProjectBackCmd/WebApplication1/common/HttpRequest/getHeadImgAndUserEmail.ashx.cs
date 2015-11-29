@@ -22,7 +22,7 @@ namespace WebApplication1.common.HttpRequest
             Object obj = context.Session["userEmail"];
 
             if (obj != null)
-           // if(true)
+            //if(true)
             {
                 string userEmail = obj.ToString();
                 //string userEmail = "601825672@qq.com";

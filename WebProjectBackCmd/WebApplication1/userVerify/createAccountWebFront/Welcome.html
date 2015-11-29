@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Welcome form EnCor</title>
+    <script src="../../common/js/jquery-1.9.1.min.js"></script>
+    <link href="../../common/cssFrame/HeaderStyle.css" rel="stylesheet" />
+    <style>
+        *{
+            font-family: "Microsoft YaHei UI";
+            margin: 0px ;
+        }
+        .container{
+            width: 700px;
+            margin: auto;
+            background-color: #a5a5a5;
+        }
+
+        .title{
+            margin-top: 30px;
+            color: #616161;
+            font-size: 40px;
+            text-align: center;
+
+        }
+        .title p{
+            font-family: "Yu Gothic Light" ;
+        }
+
+        .tellEmail{
+            margin-top: 40px;
+            text-align: center;
+            font-size: 20px;
+            color: #626262;
+        }
+
+        .tellEmail p, .tellEmail span{
+            font-family:"Yu Gothic Light"
+        }
+
+        @media screen and (min-width: 700px){
+            .thanks{
+                text-align: center;
+                color: #7d7d7d;
+                width: 700px;
+                margin: auto;
+                margin-top: 40px;
+            }
+
+        }
+
+        @media screen and (max-width: 700px){
+            .thanks{
+                text-align: center;
+                color: #7d7d7d;
+                margin-top: 40px;
+            }
+
+        }
+
+        .thanks p{
+            font-family:"Yu Gothic Light"
+
+        }
+
+        .continue {
+            width: 120px;
+            height: 25px;
+            margin: auto;
+            border-radius: 3px;
+            background-color: #4d90fe;
+            margin-top:25px;
+        }
+
+        .continue input {
+            width: 120px;
+            height: 25px;
+            border: none;
+        }
+
+        .img{
+            margin: auto;
+            width: 360px;
+            margin-top: 60px;
+        }
+        .img img{
+            width: 360px;
+            margin: auto;
+        }
+    </style>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // 判断是否有头像和用户名
+            $.get("../../common/HttpRequest/getHeadImgAndUserEmail.ashx", {}, function (data) {
+                if (data.length > 0) {
+                    // 有头像
+                    //加载头像
+
+                    var jsonValue = jQuery.parseJSON(data);
+                    if (jsonValue.isLogin == "true") {
+                        $("#div_signIn").hide();
+                        document.getElementById("login_headImg").src = jsonValue.headImgUrl;
+                        document.getElementById("login_name").innerHTML = jsonValue.last_name;
+                    } else {
+                        $("#div_headImg_User").hide();
+                    }
+                } else {
+                    //没有头像 隐藏头像div
+                    $("#div_headImg_User").hide();
+                }
+            });
+        });
+    </script>
+
+</head>
+<body >
+<!-- 悬浮标题框 -->
+<div class="header">
+    <div class="floatHeader">
+        <div>
+            <a href="#" id="logo" class="logo">
+                <img src="../../common/image/Encor_logo.png" title="logo" style="width: inherit;height: 47px"/>
+            </a>
+        </div>
+        <div id="div_headImg_User">
+            <a id="userHeadPic" class="userHeadPic" href="#">
+                <img id="login_headImg" src="../../common/image/headimg.png">
+            </a>
+            <a href="#" id="userName" class="userName">
+                <div id="login_name">name</div>
+            </a>
+        </div>
+ 
+        <div class="signBtn" id="div_signIn">
+            <input type="button" name="Sign in" value="Sign in"
+                   id="sign_In" class="sign">
+
+        </div>
+    </div>
+</div>
+
+<div style="height: 110px"></div>
+<div class="title">
+    <p >Welcome!</p>
+
+</div>
+<div class="tellEmail">
+    <p>Your new email address is <span id="email">gagahejiashi@gmail.com</span></p>
+</div>
+<div class="thanks">
+    <p>Thanks for creating a Google Account. Use it to subscribe to channels on YouTube, video chat for free, save favorite places on Maps, and lots more.</p>
+</div>
+
+<div class="continue">
+    <input type="button" name="Continue" value="Continue"
+           onclick=""
+           id="continue" class="sign">
+</div>
+
+<div class="img">
+    <img src="../../common/image/bottom.png">
+</div>
+<div class="container">
+
+</div>
+
+</body>
+</html>

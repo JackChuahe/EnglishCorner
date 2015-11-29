@@ -83,6 +83,7 @@
     <Content Include="userVerify\createAccountWebFront\js\koala.min.1.5.js" />
     <Content Include="userVerify\createAccountWebFront\js\terminator2.2.min.js" />
     <Content Include="userVerify\createAccountWebFront\Verify.html" />
+    <Content Include="userVerify\createAccountWebFront\Welcome.html" />
     <Content Include="userVerify\loginWebFront\css\MainBoxStyle.css" />
     <Content Include="userVerify\loginWebFront\css\SignInStyle.css" />
     <Content Include="common\image\headimg.png" />
