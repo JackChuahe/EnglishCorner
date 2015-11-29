@@ -24,11 +24,14 @@ namespace WebApplication1.userVerify.createAccount
             string userEmailWithBase64 = context.Request.QueryString["userEmail"].ToString().Trim();
             string userEmail = MyBase64.decodeBase64(userEmailWithBase64);
             bool isActiveOk = false;
+
+            if (userEmail != null)
+            { 
             /*
              *  连接数据库 为用户激活
              *  调用 userVerify 包的 function userActive(v_userEmail in varchar2) return varchar
              */
-            {
+                {
                 string connectionStr = ConfigurationManager.ConnectionStrings["oracleCon"].ConnectionString;
                 OracleConnection myConnection = new OracleConnection(connectionStr);//创建一个连接的对象 
                 OracleCommand myOracleCommand = new OracleCommand("userVerifyPK.userActive", myConnection); // 创建一个调用过程的执行对象
@@ -60,6 +63,7 @@ namespace WebApplication1.userVerify.createAccount
                     context.Session["userEmail"] = userEmail;     // 设置seesion
                 }
 
+            }
             }
 
             context.Response.Write(isActiveOk.ToString());  // 写回前端

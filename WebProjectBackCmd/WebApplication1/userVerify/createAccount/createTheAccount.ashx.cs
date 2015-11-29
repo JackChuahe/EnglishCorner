@@ -145,7 +145,7 @@ namespace WebApplication1.userVerify.createAccount
             //string path2 = System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName;
             //string path3 = System.Environment.CurrentDirectory;
             string path = sPath + "common\\txt\\Email.html";
-            string href = "222.196.200.38";
+            string href = "localhost:5672/userVerify/createAccountWebFront/Welcome.html?userEmail="+MyBase64.encodeBase64(userEmail);
             StreamReader sr = new StreamReader(path, Encoding.Default);
             String line;
             String body = "";

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Welcome form EnCor</title>
     <script src="../../common/js/jquery-1.9.1.min.js"></script>
+    <script src="../../common/js/jquery.base64.js"></script>
     <link href="../../common/cssFrame/HeaderStyle.css" rel="stylesheet" />
     <style>
         *{
@@ -94,22 +95,48 @@
     <script type="text/javascript">
         $(document).ready(function () {
             // 判断是否有头像和用户名
-            $.get("../../common/HttpRequest/getHeadImgAndUserEmail.ashx", {}, function (data) {
-                if (data.length > 0) {
-                    // 有头像
-                    //加载头像
-
-                    var jsonValue = jQuery.parseJSON(data);
-                    if (jsonValue.isLogin == "true") {
-                        $("#div_signIn").hide();
-                        document.getElementById("login_headImg").src = jsonValue.headImgUrl;
-                        document.getElementById("login_name").innerHTML = jsonValue.last_name;
+            function getHeaderImg() {
+                $.get("../../common/HttpRequest/getHeadImgAndUserEmail.ashx", {}, function (data) {
+                    if (data.length > 0) {
+                        // 有头像
+                        //加载头像
+                        var jsonValue = jQuery.parseJSON(data);
+                        if (jsonValue.isLogin == "true") {
+                            $("#div_signIn").hide();
+                            $("#div_headImg_User").show();
+                            document.getElementById("login_headImg").src = jsonValue.headImgUrl;
+                            document.getElementById("login_name").innerHTML = jsonValue.last_name;
+                        } else {
+                            $("#div_headImg_User").hide();
+                        }
                     } else {
+                        //没有头像 隐藏头像div
                         $("#div_headImg_User").hide();
                     }
+                });
+
+            };
+
+            getHeaderImg();
+          
+            //获取需要验证的用户名
+            // 提取get方法的内容
+            function GetQueryString(name) {
+                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+                var r = window.location.search.substr(1).match(reg);
+                if (r != null) return unescape(r[2]); return null;
+            }
+            // 提取邮箱
+            var userEmailWithBase64 = GetQueryString("userEmail");
+            //向后台请求激活
+            $.get("../createAccount/userActive.ashx", { userEmail: userEmailWithBase64 }, function (isActiveOk) {
+                if (isActiveOk == "True") {
+                    //激活成功
+                    getHeaderImg();
+                    //设置头像
                 } else {
-                    //没有头像 隐藏头像div
-                    $("#div_headImg_User").hide();
+                    alert("Active Failed! Redirction Now");
+                    window.location = "../loginWebFront/SignIn.html";
                 }
             });
         });
@@ -135,10 +162,12 @@
         </div>
  
         <div class="signBtn" id="div_signIn">
-            <input type="button" name="Sign in" value="Sign in"
-                   id="sign_In" class="sign">
+            <a href="../loginWebFront/SignIn.html">
+                <input type="button" name="Sign in" value="Sign in"
+                       id="sign_In" class="sign">
+            </a>
 
-        </div>
+</div>
     </div>
 </div>
 

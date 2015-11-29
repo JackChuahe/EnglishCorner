@@ -14,7 +14,13 @@ namespace WebApplication1.common.class_
         /// <returns></returns>
         public static string  encodeBase64(string rawData)
         {
-            return System.Convert.ToBase64String(System.Text.Encoding.Default.GetBytes(rawData));
+            try {
+                    return System.Convert.ToBase64String(System.Text.Encoding.Default.GetBytes(rawData));
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
         }
 
         /// <summary>
@@ -25,7 +31,13 @@ namespace WebApplication1.common.class_
         public static string decodeBase64(string rawData)
         {
             //解码
-            return System.Text.Encoding.Default.GetString(System.Convert.FromBase64String(rawData));
+            try { 
+                    return System.Text.Encoding.Default.GetString(System.Convert.FromBase64String(rawData));
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
         }
 
 
