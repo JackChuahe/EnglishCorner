@@ -205,17 +205,15 @@
                     var tempPwd = token + $("#password").val();
                     var rawPwd = $.base64.btoa(tempPwd);
                     $.post("../createAccount/createTheAccount.ashx", { first_name: $("#FirstName").val(), last_name: $("#LastName").val(), userEmail: $("#email").val(), pwd: rawPwd }, function (isInsertOK) {
-                        alert(isInsertOK);
+                        //alert(isInsertOK);
                         if (isInsertOK == "True") {
-
+                            window.location = "Verify.html?userEmail=" + $("#email").val();
                             // 插入成功!下面进行下一步 激活页面
                         } else {
                             //插入失败
                             alert("Create Account Failed ! Please try again !");
                             init();
                             changePic();
-                            
-
                         }
                     });
 

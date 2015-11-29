@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>To verify in you Email</title>
-
+    <script src="../../common/js/jquery-1.9.1.min.js"></script>
     <link href="../../common/cssFrame/HeaderStyle.css" rel="stylesheet" />
     <style>
         *{
@@ -66,6 +66,41 @@
             margin: auto;
         }
     </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // 判断是否有头像和用户名
+            $.get("../../common/HttpRequest/getHeadImgAndUserEmail.ashx", {}, function (data) {
+                if (data.length > 0) {
+                    // 有头像
+                    //加载头像
+                    
+                    var jsonValue = jQuery.parseJSON(data);
+                    if (jsonValue.isLogin == "true") {
+                        $("#div_signIn").hide();
+                        document.getElementById("login_headImg").src = jsonValue.headImgUrl;
+                        document.getElementById("login_name").innerHTML = jsonValue.last_name;
+                    } else {
+                        $("#div_headImg_User").hide();
+                    }
+                } else {
+                    //没有头像 隐藏头像div
+                    $("#div_headImg_User").hide();
+                }
+            });
+
+
+         
+            // 提取get方法的内容
+            function GetQueryString(name) {
+                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+                var r = window.location.search.substr(1).match(reg);
+                if (r != null) return unescape(r[2]); return null;
+            }
+
+            // 提取邮箱
+            document.getElementById("email_address").innerHTML = GetQueryString("userEmail");
+        });
+    </script>
 </head>
 <body >
 <!-- 悬浮标题框 -->
@@ -76,20 +111,19 @@
                 <img src="../../common/image/EnCor_logo.png" title="logo" style="width: inherit;height: 47px"/>
             </a>
         </div>
-        <div>
+        <div id="div_headImg_User">
             <a id="userHeadPic" class="userHeadPic" href="#">
-                <img src="../../common/image/headimg.png">
+                <img src="../../common/image/headimg.png" id="login_headImg">
+            </a>
+            <a href="#" id="userName" class="userName">
+                <div id="login_name">name</div>
             </a>
         </div>
-        <div>
-            <a href="#" id="userName" class="userName">
-                <div>name</div>
-            </a>
-            <div class="signBtn">
+ 
+            <div class="signBtn" id="div_signIn">
                 <input type="button" name="Sign in" value="Sign in"
                        onclick=""
                        id="sign_In" class="sign">
-            </div>
         </div>
     </div>
 </div>
@@ -100,7 +134,7 @@
 
 </div>
 <div class="thanks">
-    <p>Thanks for creating a EnCor Account. Please go to your email address to complete the final registration.</p>
+    <p>Thanks for creating a EnCor Account. Please go to your email (<span id="email_address"></span>) to complete the final registration.</p>
 </div>
 
 <div class="img">

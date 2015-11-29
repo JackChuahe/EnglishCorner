@@ -21,11 +21,11 @@ namespace WebApplication1.common.HttpRequest
             string returnJson = "";
             Object obj = context.Session["userEmail"];
 
-           // if (obj != null)
-            if(true)
+            if (obj != null)
+           // if(true)
             {
-                //string userEmail = obj.ToString();
-                string userEmail = "601825672@qq.com";
+                string userEmail = obj.ToString();
+                //string userEmail = "601825672@qq.com";
                 // 若登录过
                 //访问数据库
                 string connectionStr = ConfigurationManager.ConnectionStrings["oracleCon"].ConnectionString;
