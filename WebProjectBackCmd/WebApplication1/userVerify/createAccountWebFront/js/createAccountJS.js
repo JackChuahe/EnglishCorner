@@ -25,6 +25,25 @@
         
     };
 
+    // 判断是否有头像和用户名
+    $.get("../../common/HttpRequest/getHeadImgAndUserEmail.ashx", {}, function (data) {
+        if (data.length > 0) {
+            // 有头像
+            //加载头像
+            var jsonValue = jQuery.parseJSON(data);
+            if (jsonValue.isLogin == "true") {
+                $("#div_signIn").hide();
+                document.getElementById("login_headImg").src = jsonValue.headImgUrl;
+                document.getElementById("login_name").innerHTML = jsonValue.last_name;
+            } else {
+                $("#div_headImg_User").hide();
+            }
+        } else {
+            //没有头像 隐藏头像div
+            $("#div_headImg_User").hide();
+        }
+    });
+
     changePic();
 
     var isEmailExists = false;
@@ -187,13 +206,15 @@
                     var rawPwd = $.base64.btoa(tempPwd);
                     $.post("../createAccount/createTheAccount.ashx", { first_name: $("#FirstName").val(), last_name: $("#LastName").val(), userEmail: $("#email").val(), pwd: rawPwd }, function (isInsertOK) {
                         alert(isInsertOK);
-                        if (isInsertOK = "False") {
+                        if (isInsertOK == "True") {
+
+                            // 插入成功!下面进行下一步 激活页面
+                        } else {
+                            //插入失败
                             alert("Create Account Failed ! Please try again !");
                             init();
                             changePic();
-                        } else {
-
-                            // 插入成功!下面进行下一步 激活页面
+                            
 
                         }
                     });

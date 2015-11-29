@@ -9,6 +9,27 @@
     <script src="../../common/js/jquery-1.9.1.min.js"></script>
     <script src="../../common/js/jquery.base64.js"></script>
     <script src="js/createAccountJS.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/koala.min.1.5.js"></script>
+    <script type="text/javascript">
+        Qfast.add('widgets', { path: "js/terminator2.2.min.js", type: "js", requires: ['fx'] });
+        Qfast(false, 'widgets', function () {
+            K.tabs({
+                id: 'decoroll2',//焦点图包裹id
+                conId: "decoimg_a2",//大图域包裹id
+                tabId: "deconum2",//小圆点数字提示id
+                tabTn: "a",
+                conCn: '.decoimg_b2',//大图域配置class
+                auto: 1,//自动播放 1或0
+                effect: 'fade',//效果配置
+                eType: 'mouseover',// 鼠标事件
+                pageBt: true,//是否有按钮切换页码
+                bns: ['.prev', '.next'],//前后按钮配置class
+                interval: 3000// 停顿时间
+            })
+        })
+    </script>
 </head>
 <body class="body">
 <!-- 悬浮标题框 -->
@@ -19,22 +40,22 @@
                 <img src="../../common/image/EnCor_logo.png" title="logo" style="width: inherit;height: 47px">
             </a>
         </div>
-        <div>
+        <div id="div_headImg_User">
             <a id="userHeadPic" class="userHeadPic" href="#">
-                <img src="../../common/image/headimg.png">
+                <img id="login_headImg" src="../../common/image/headimg.png">
             </a>
-        </div>
-        <div>
             <a href="#" id="userName" class="userName">
-                <div>name</div>
+                <div id="login_name">name</div>
             </a>
-
-            <div class="signBtn">
-                <input type="button" name="Sign in" value="Sign in"
-                       onclick=""
-                       id="sign_In" class="sign">
-            </div>
         </div>
+        
+            <div class="signBtn" id="div_signIn">
+                <a href="../loginWebFront/SignIn.html">
+                    <input type="button" name="Sign in" value="Sign in"
+                           id="sign_In" class="sign">
+                </a>
+            </div>
+        
     </div>
 </div>
 <!-- 主框体 -->
@@ -46,8 +67,22 @@
     </header>
     <!-- 左窗体 -->
     <div class="leftBox">
-        <div class="createimg">
-            <img src="../../common/image/Z.jpg">
+        <div id="decoroll2" class="imgfocus">
+
+            <div id="decoimg_a2" class="imgbox">
+                <div class="decoimg_b2"><img src="img/1.jpg"></div>
+                <div class="decoimg_b2"><img src="img/2.jpg"></div>
+                <div class="decoimg_b2"><img src="img/3.jpg"></div>
+                <div class="decoimg_b2"><img src="img/4.jpg"></div>
+            </div>
+
+            <ul id="deconum2" class="num_a2">
+                <li><a href="javascript:void(0)" hidefocus="true" target="_self">杨幂</a></li>
+                <li><a href="javascript:void(0)" hidefocus="true" target="_self">范冰冰</a></li>
+                <li><a href="javascript:void(0)" hidefocus="true" target="_self">高圆圆</a></li>
+                <li><a href="javascript:void(0)" hidefocus="true" target="_self">刘诗诗</a></li>
+            </ul>
+
         </div>
     </div>
     <!-- 右窗体-->
@@ -92,7 +127,7 @@
 
             <div>
                 <div class="confirmPic">
-                    <img id="confirmPic" src="../../common/image/logo.png" width="294" height="65px">
+                    <img id="confirmPic" src="#" width="294" height="65px">
                 </div>
                 <div class="confirmPic">
                     <div>
@@ -100,7 +135,7 @@
                     </div>
                     <input id="confirmCode" type="text" maxlength="10">
                     <a id="change" href="javascript:changeCaptcha()" title="Get a new challenge">
-                        <img src="imgSrc/reload.png" />
+                        <img src="img/reload.png" />
                     </a>
 
                     <div class="err" ><p id="captchaError"></p></div>

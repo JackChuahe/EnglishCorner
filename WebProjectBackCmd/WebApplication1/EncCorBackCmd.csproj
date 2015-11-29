@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="common\cssFrame\HeaderStyle.css" />
+    <Content Include="common\image\bottom.png" />
     <Content Include="common\image\EnCor_logo.png" />
     <Content Include="common\js\jquery-1.9.1.min.js" />
     <Content Include="common\txt\Email.html" />
@@ -71,8 +72,17 @@
     <Content Include="UserHeadImg\default.png" />
     <Content Include="userVerify\createAccountWebFront\CreateAccount.html" />
     <Content Include="userVerify\createAccountWebFront\css\CreateAccountStyle.css" />
-    <Content Include="userVerify\createAccountWebFront\imgSrc\reload.png" />
+    <Content Include="userVerify\createAccountWebFront\css\style.css" />
+    <Content Include="userVerify\createAccountWebFront\img\1.jpg" />
+    <Content Include="userVerify\createAccountWebFront\img\2.jpg" />
+    <Content Include="userVerify\createAccountWebFront\img\3.jpg" />
+    <Content Include="userVerify\createAccountWebFront\img\4.jpg" />
+    <Content Include="userVerify\createAccountWebFront\img\controbg.png" />
+    <Content Include="userVerify\createAccountWebFront\img\reload.png" />
     <Content Include="userVerify\createAccountWebFront\js\createAccountJS.js" />
+    <Content Include="userVerify\createAccountWebFront\js\koala.min.1.5.js" />
+    <Content Include="userVerify\createAccountWebFront\js\terminator2.2.min.js" />
+    <Content Include="userVerify\createAccountWebFront\Verify.html" />
     <Content Include="userVerify\loginWebFront\css\MainBoxStyle.css" />
     <Content Include="userVerify\loginWebFront\css\SignInStyle.css" />
     <Content Include="common\image\headimg.png" />

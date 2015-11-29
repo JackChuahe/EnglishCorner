@@ -21,10 +21,11 @@ namespace WebApplication1.common.HttpRequest
             string returnJson = "";
             Object obj = context.Session["userEmail"];
 
-            if (obj != null)
+           // if (obj != null)
+            if(true)
             {
-                string userEmail = obj.ToString();
-                //string userEmail = "601825672@qq.com";
+                //string userEmail = obj.ToString();
+                string userEmail = "601825672@qq.com";
                 // 若登录过
                 //访问数据库
                 string connectionStr = ConfigurationManager.ConnectionStrings["oracleCon"].ConnectionString;
@@ -33,11 +34,13 @@ namespace WebApplication1.common.HttpRequest
                 myOracleCommand.CommandType = System.Data.CommandType.StoredProcedure; // 设置为调用存储过程
                 OracleParameter[] prams = {
                                                new OracleParameter("v_userEmail",OracleType.VarChar,50),
+                                               new OracleParameter("v_lastname",OracleType.VarChar,15),
                                                new OracleParameter("userHeadImgUrl",OracleType.VarChar,50)
                                            };
                 // 设置参数类型
                 prams[0].Direction = System.Data.ParameterDirection.Input;
-                prams[1].Direction = System.Data.ParameterDirection.ReturnValue;   // 接收返回值
+                prams[1].Direction = System.Data.ParameterDirection.Output;
+                prams[2].Direction = System.Data.ParameterDirection.ReturnValue;   // 接收返回值
                 // 为参数设置值
                 prams[0].Value = userEmail;
                 //将参数加入到连接实体中
@@ -48,10 +51,12 @@ namespace WebApplication1.common.HttpRequest
                 // 连接数据库
                 myConnection.Open();
                 myOracleCommand.ExecuteNonQuery();   // 执行过程
-                string result = prams[1].Value.ToString();
+                string last_name = prams[1].Value.ToString();
+                string img_url = prams[2].Value.ToString();
+
                 myConnection.Close();
                 //拼接json
-                returnJson = "{ \"userEmail\":\"" + userEmail + "\" , \"headImgUrl\":\"" + result + "\" , \"isLogin\":\"true\"}";
+                returnJson = "{ \"last_name\":\"" + last_name + "\" , \"headImgUrl\":\"" + img_url + "\" , \"isLogin\":\"true\"}";
 
             }
             else
