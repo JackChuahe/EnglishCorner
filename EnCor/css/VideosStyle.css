@@ -1,0 +1,72 @@
+.videoBox{
+    width: 980px;
+    height: 1000px;
+    margin: 0 auto;
+    /*background-color: #ffffff;*/
+    font-family: "Microsoft JhengHei UI";
+}
+
+.description{
+    width: 960px;
+    height: 400px;
+    padding: 10px;
+    margin-top: 3px;
+    background-color: #808080;
+}
+
+.nav{
+    margin-top: 10px;
+    height: 30px;
+}
+.nav div{
+    padding: 5px;
+    height: 20px;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: #d5d5d5 0px 0px 4px;
+    float: left;
+    margin-left: 1px;
+    margin-right: 1px;
+    color: #515151;
+    background-color: rgb(232, 232, 232);
+
+}
+
+.nav div:hover{
+    color: white;
+    background-color: rgb(165, 165, 165);
+}
+
+.nav a{
+    font-size: small;
+
+}
+
+.content{
+    margin-top: 10px;
+}
+
+.name{
+    font-family: "Microsoft YaHei UI";
+    font-size: large;
+    color: #2f5bb7;
+}
+
+.videoView{
+    margin-top: 5px;
+    padding: 6px;
+}
+
+.videoView img{
+
+    background-color: white;
+    padding: 5px;
+    width: 180px;
+    height: 160px;
+    box-shadow: #8f8f8f 1px 1px 2px;
+}
+
+.videoView img:hover{
+    box-shadow: #8f8f8f 1px 8px 30px;
+}
+

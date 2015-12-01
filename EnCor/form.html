@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>视频分类</title>
+    <title>VedioRunning</title>
     <link href="css/HeaderStyle.css" type="text/css" rel="stylesheet">
     <link href="css/FooterSideBarStyle.css" type="text/css" rel="stylesheet">
 </head>
@@ -11,8 +11,8 @@
 <div class="header">
     <div class="floatHeader">
         <div>
-            <a id="logo" class="logo">
-                <img src="image/EnCor_logo.png" style="width: inherit;height: 47px"/>
+            <a href="#" id="logo" class="logo">
+                <img src="image/logo.png" title="logo" style="width: inherit;height: 47px"/>
             </a>
         </div>
         <div>
@@ -21,22 +21,38 @@
             </a>
         </div>
         <div>
-            <div id="userName" class="userName">
+            <a href="#" id="userName" class="userName">
                 <div>name</div>
+            </a>
+            <div class="signBtn">
+                <input type="button" name="Sign in" value="Sign in"
+                       onclick=""
+                       id="sign_In" class="sign">
             </div>
         </div>
     </div>
     <!-- 导航bar -->
     <div class="header_wrapper">
-        <div style="height:30px;width:430px;margin: 0 auto">
-            <div>
-        <a class="nav" href="#">Welcome</a></div><div>
-        <a class="nav" href="Community.html">Community</a></div><div>
-        <a class="nav" href="VedioView.html">Videos</a></div><div>
-        <a class="nav" href="#">Listening</a></div><div>
-        <a class="nav" href="#">Sourse</a></div>
+        <div class="navMenu">
+            <a href="#">
+                <div class="select">Welcome</div>
+            </a>
+            <a href="#">
+                <div class="select">Community</div>
+            </a>
+            <a href="#">
+                <div class="select">Videos</div>
+            </a>
+            <a href="#">
+                <div class="select">Listening</div>
+            </a>
+            <a href="#">
+                <div class="select">Sourse</div>
+            </a>
+
         </div>
     </div>
+</div>
 </div>
 <!-- 主框体 -->
 <div class="mainBox">

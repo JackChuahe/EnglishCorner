@@ -1,0 +1,97 @@
+
+.videoBox{
+    width: 1200px;
+    margin: 0 auto;
+    /*background-color: #ffffff;*/
+    font-family: "Microsoft JhengHei UI";
+}
+
+.leftBox{
+    width: 800px;
+    float: left;
+    font-family: 'Open Sans', arial;
+}
+
+.rightBox{
+    width: 380px;
+    height: 1000px;
+    background-color: white;
+    float: right;
+
+}
+
+.video{
+    background-color: #000000;
+    border-radius: 2px;
+    -webkit-box-shadow: #8f8f8f 0px 5px 10px;
+    -moz-box-shadow:#8f8f8f 0px 5px 10px;
+    box-shadow: #8f8f8f 0px 5px 10px;
+}
+
+.message{
+    margin-top: 10px;
+    width: 800px;
+    color: #484848;
+}
+
+.Introduction{
+    padding: 10px;
+    background-color: #ffffff;
+    font-family: 'Open Sans', Arial;
+    border-radius: 1px;
+    -webkit-box-shadow: #7d7d7d 0px 0px 2px;
+    -moz-box-shadow: #7d7d7d 0px 0px 2px;
+    box-shadow: #7d7d7d 0px 0px 2px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+p{
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+.commentArea{
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 1px;
+    -webkit-box-shadow: #7d7d7d 0px 0px 2px;
+    -moz-box-shadow: #7d7d7d 0px 0px 2px;
+    box-shadow: #7d7d7d 0px 0px 2px;
+}
+
+#videoName{
+    font-size: large;
+    color: black;
+    width: 620px;
+
+}
+
+#commentArea{
+    width: 760px;
+    height: 50px;
+    padding: 8px;
+    resize: vertical;
+    max-height: 100px;
+    font-family:"Microsoft JhengHei UI";
+    font-size: 13px;
+    color: #000000;
+    margin-top: 10px;
+    margin-bottom:30px;
+}
+.line{
+    height: 1px;
+    background-color: #9c9c9c;
+    -webkit-box-shadow: #c0c0c0 0px 0px 1px;
+    -moz-box-shadow: #c0c0c0 0px 0px 1px;
+    box-shadow: #c0c0c0 0px 0px 1px;
+    margin: 10px;
+}
+.comments img{
+    width: 50px;
+    border-radius: 25px;
+}
+.clear {
+    clear: both;
+}
+
+

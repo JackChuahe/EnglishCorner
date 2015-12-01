@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>VedioRunning</title>
     <link href="css/HeaderStyle.css" type="text/css" rel="stylesheet">
+    <link href="css/videoRunStyle.css" type="text/css" rel="stylesheet">
     <link href="css/FooterSideBarStyle.css" type="text/css" rel="stylesheet">
 </head>
 <body class="body">
@@ -11,8 +12,8 @@
 <div class="header">
     <div class="floatHeader">
         <div>
-            <a id="logo" class="logo">
-                <img src="image/EnCor_logo.png" style="width: inherit;height: 47px"/>
+            <a href="#" id="logo" class="logo">
+                <img src="image/logo.png" title="logo" style="width: inherit;height: 47px"/>
             </a>
         </div>
         <div>
@@ -21,19 +22,76 @@
             </a>
         </div>
         <div>
-            <div id="userName" class="userName">
+            <a href="#" id="userName" class="userName">
                 <div>name</div>
+            </a>
+
+            <div class="signBtn">
+                <input type="button" name="Sign in" value="Sign in"
+                       onclick=""
+                       id="sign_In" class="sign">
             </div>
         </div>
     </div>
     <!-- 导航bar -->
     <div class="header_wrapper">
+        <div class="navMenu">
+            <a href="#">
+                <div class="select">Welcome</div>
+            </a>
+            <a href="#">
+                <div class="select">Community</div>
+            </a>
+            <a href="#">
+                <div class="select">Videos</div>
+            </a>
+            <a href="#">
+                <div class="select">Listening</div>
+            </a>
+            <a href="#">
+                <div class="select">Sourse</div>
+            </a>
 
+        </div>
     </div>
 </div>
 <!-- 主框体 -->
-<div class="mainBox">
-
+<div class="videoBox">
+    <div style="height: 110px"></div>
+    <div class="leftBox">
+        <div class="video">
+            <div>
+                <video src="video/01.mkv" preload="load" width="100%" height="530px"
+                       controls="controls">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        <div class="message">
+            <div class="Introduction">
+                <p id="videoName">
+                    Fleet of Time
+                </p>
+            </div>
+            <div class="commentArea">
+                <p id="commentNo">
+                    comments: <span>125</span>
+                </p>
+                <div>
+                    <textarea id="commentArea" placeholder="Just say here"></textarea>
+                </div>
+                <div class="line"></div>
+                <div id="comments" class="comments">
+                    <div id="email" class="comment">
+                        <img src="image/headimg.png">
+                        <span id="name">Anni Liu</span>
+                        <p id></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="rightBox"></div>
 </div>
 <!--清除浮动-->
 <div class="clear"></div>
