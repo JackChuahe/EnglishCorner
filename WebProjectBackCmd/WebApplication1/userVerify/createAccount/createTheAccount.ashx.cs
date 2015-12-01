@@ -112,15 +112,15 @@ namespace WebApplication1.userVerify.createAccount
             try
             {
                 MailMessage msg = new MailMessage();
-                msg.From = new MailAddress("601825672@qq.com");   //发件人的邮箱地址
+                msg.From = new MailAddress("gemenglish@sohu.com");   //发件人的邮箱地址
                 msg.Subject = "English Corner Account Verify";  //邮件主题
                 msg.Body = getBody(userEmail);//邮件正文
                 msg.To.Add(userEmail);
                 msg.IsBodyHtml = true;  //邮件正文是否支持html的值
                 SmtpClient sc = new SmtpClient();
-                sc.Host = "smtp.qq.com";//smtp.qq.com
+                sc.Host = "smtp.sohu.com";//smtp.qq.com
                 sc.Port = 25;
-                NetworkCredential nc = new NetworkCredential("601825672", "cai601825672");  //验证凭据 1607977350：是邮箱账号，********：是邮箱密码
+                NetworkCredential nc = new NetworkCredential("gemenglish", "c601825672");  //验证凭据 1607977350：是邮箱账号，********：是邮箱密码
                 sc.Credentials = nc;
                 sc.Send(msg);
                 return true;
@@ -145,7 +145,7 @@ namespace WebApplication1.userVerify.createAccount
             //string path2 = System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName;
             //string path3 = System.Environment.CurrentDirectory;
             string path = sPath + "common\\txt\\Email.html";
-            string href = "localhost:5672/userVerify/createAccountWebFront/Welcome.html?userEmail="+MyBase64.encodeBase64(userEmail);
+            string href = "http://localhost:5672/userVerify/createAccountWebFront/Welcome.html?userEmail="+MyBase64.encodeBase64(userEmail);
             StreamReader sr = new StreamReader(path, Encoding.Default);
             String line;
             String body = "";
