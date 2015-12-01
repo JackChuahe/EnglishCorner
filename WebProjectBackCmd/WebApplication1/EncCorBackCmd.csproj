@@ -102,6 +102,15 @@
     <Compile Include="common\HttpRequest\getHeadImgAndUserEmail.ashx.cs">
       <DependentUpon>getHeadImgAndUserEmail.ashx</DependentUpon>
     </Compile>
+    <Compile Include="communityConversation\community\getCommunityActivesInfoAndComment.ashx.cs">
+      <DependentUpon>getCommunityActivesInfoAndComment.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="communityConversation\community\getCommunityInfo.ashx.cs">
+      <DependentUpon>getCommunityInfo.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="communityConversation\community\getCommunityUsersHeadImg.ashx.cs">
+      <DependentUpon>getCommunityUsersHeadImg.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="userVerify\createAccount\CAPTCHA.ashx.cs">
       <DependentUpon>CAPTCHA.ashx</DependentUpon>
@@ -142,6 +151,9 @@
     <Content Include="userVerify\createAccount\setServerToken.ashx" />
     <Content Include="common\HttpRequest\getHeadImgAndUserEmail.ashx" />
     <Content Include="userVerify\createAccount\userActive.ashx" />
+    <Content Include="communityConversation\community\getCommunityInfo.ashx" />
+    <Content Include="communityConversation\community\getCommunityUsersHeadImg.ashx" />
+    <Content Include="communityConversation\community\getCommunityActivesInfoAndComment.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
