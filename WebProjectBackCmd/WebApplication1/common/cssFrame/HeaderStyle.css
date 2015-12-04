@@ -5,20 +5,17 @@
 }
 .header {
     width: 100%;
-    height: 70px;
     background-color: #ffffff;
+    -webkit-box-shadow: #666 0px 0px 10px;
+    -moz-box-shadow: #666 0px 0px 10px;
+    box-shadow: #666 0px 0px 10px;
     position: fixed;
-    top: 0px;
-
 }
 
 .floatHeader {
     width: 100%;
     height: 70px;
     background-color: #ffffff;
-    -webkit-box-shadow: #666 0px 0px 10px;
-    -moz-box-shadow: #666 0px 0px 10px;
-    box-shadow: #666 0px 0px 10px;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
@@ -41,10 +38,10 @@
 
 .userHeadPic{
 
-    width: 40px;
-    height: 40px;
-    margin-right: 50px;
-    margin-top: 15px;
+    width: 30px;
+    height: 30px;
+    margin-right: 30px;
+    margin-top: 20px;
     float: right;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -53,16 +50,17 @@
 
 .userHeadPic img{
 
-    width: 40px;
-    height:40px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    border-radius: 20px;
+    width: 30px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
 }
 
 .userName{
+    width: 60px;
+    height: 20px;
     margin-top: 20px;
-    margin-right: 30px;
+    margin-right: 10px;
     float: right;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -74,7 +72,7 @@
     margin-top: 5px;
     text-align: center;
     text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-    color: #3f41ff;
+    color: #696969;
 }
 
 .signBtn {
@@ -98,7 +96,7 @@
     border-radius: 2px;
     border: 1px solid #2f5bb7;
     color: #fff;
-    background-color: #357ae8;
+    background-color: #367be8;
 }
 
 .sign:hover {
@@ -114,47 +112,43 @@
     background-image: linear-gradient(top, #4d90fe, #357ae8);
 }
 
-.nav a:hover{
-    margin: 0 auto;
-    margin: 5px;
-    width: 30px;
-    height: 100%;
-    border-radius: 5px;
-    background-color: #ffffff;
-}
+/*.nav a:hover{*/
+    /*padding: 5px;*/
+    /*margin: 0 auto;*/
+    /*width: 30px;*/
+    /*height: 100%;*/
+    /*border-radius: 5px;*/
+    /*background-color: #ffffff;*/
+/*}*/
 
 a{
     text-decoration: none;
 }
 .header_wrapper {
     margin: auto;
-    margin-top: 3px;
     width: 100%;
-    height: 30px;
+    height: 24px;
     background-color: rgba(255, 233, 0, 0);
 }
 
 
 .navMenu{
-    width: 500px;
+    width: 410px;
     height: 24px;
     margin: auto;
     /*background-color: #0000ff;*/
 }
 
 .select{
-    margin: 3px;
-    width: 90px;
+    margin-left: 10px;
     height: 22px;
     padding: 2px;
     float: left;
-    background-color: rgba(0, 129, 255, 0.5);
     border-radius: 3px;
-    color: #ffffff;
+    color: rgb(95, 95, 95);
 }
 .select:hover{
-    color: rgb(255, 151, 6);
-    background-color: #ffffff;
+
 }
 .navMenu div{
     text-align:center

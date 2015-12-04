@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="../../common/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#name").on("click", function () {
+                $.get("../community/getCommunityUsersHeadImg.ashx", { communityID: "cm01" }, function (cInfo) {
+                    alert(cInfo);
+                    var json = jQuery.parseJSON(cInfo);
+                    for(var i = 0 ; i < json.headImages.length-1 ;i++){
+                        var tempJson = json.headImages[0].url;
+                        alert(tempJson);
+                    }
+                    //alert(json.communityName + "   " + json.communityDesc + "  " + json.headImgUrl);
+                });
+            });
+          
+        });
+    </script>
+</head>
+<body>
+    <button id="name"> my name</button>
+</body>
+</html>
