@@ -8,8 +8,10 @@ $(document).ready(function () {
         $(window).scroll(function () {
             if ($(this).scrollTop() > 200) {//当window的scrolltop距离大于1时，go to top按钮淡出，反之淡入
                 $("#goToTop").fadeIn();
+                $("#NavigationHeaderBlock").fadeOut();
             } else {
                 $("#goToTop").fadeOut();
+                $("#NavigationHeaderBlock").fadeIn();
             }
         });
     });

@@ -70,6 +70,7 @@
     <Content Include="communityConversation\communityWebFront\css\CommunityStyle.css" />
     <Content Include="communityConversation\communityWebFront\js\baseJS.js" />
     <Content Include="communityConversation\communityWebFront\js\gototop.js" />
+    <Content Include="communityConversation\communityWebFront\js\submitComment.js" />
     <Content Include="communityConversation\communityWebFront\testVisit.html" />
     <Content Include="testCommon.html" />
     <Content Include="UserContentsImage\contentimg1.jpg" />
