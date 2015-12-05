@@ -68,7 +68,11 @@ $(document).ready(function () {
         //alert(json.contents.length);
         //alert(json.contents[0].contentID);
        // var comments = contents[0].comments;
-       // alert(comments.length);
+        // alert(comments.length);
+        //每一个评论错误的的字段的 ID 为 commentError_ + contentID
+        //每一个评论输入框的ID 为 newComment_ + contentID
+        //每一个按钮的comment 的id 为 contentID
+        // 每一个评论的DIV 的ID 为 commentDiv_ + contentID
         var appentContent = "";
         for (var i = 0 ; i < contents.length ; i++) {
             appentContent += "<div class=\"box\"><div class=\"contentTitle\"><a id=\"cUserHead\" href=\"#\"><div class=\"imgHead\">" +
@@ -79,9 +83,9 @@ $(document).ready(function () {
           "</div><div class=\"clear\"></div><div class=\"content\"><div class=\"article\">" +
           contents[i].text + "</div><div class=\"line\"></div><div class=\"image\">" +
           "<img src=\"" + contents[i].textPicUrl + "\"></div></div>" +
-         "<div class=\"comment\"><div class=\"plusArea\"><div class=\"plus\">+1</div></div>" +
+         "<div class=\"comment\" id=\"commentDiv_"+contents[i].contentID+"\"><div class=\"plusArea\"><div class=\"plus\">+1</div></div>" +
          "<div class=\"line\"></div><textarea id=\"newComment_" + contents[i].contentID + "\" class=\"commentArea\" placeholder=\"what new thing to share?\"></textarea>" +
-          "<div class=\"error\">error</div>" +
+          "<div class=\"error\" id=\"commentError_"+contents[i].contentID+ "\"></div>" +
          "<a  onclick=\"javascript:submitComment(this.id)\" class=\"commentbtn\" id=\"" + contents[i].contentID + "\">" +
           "<span>comment</span></a>";
 

@@ -119,6 +119,9 @@
     <Compile Include="communityConversation\community\getCommunityUsersHeadImg.ashx.cs">
       <DependentUpon>getCommunityUsersHeadImg.ashx</DependentUpon>
     </Compile>
+    <Compile Include="communityConversation\community\submitComment.ashx.cs">
+      <DependentUpon>submitComment.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="userVerify\createAccount\CAPTCHA.ashx.cs">
       <DependentUpon>CAPTCHA.ashx</DependentUpon>
@@ -163,6 +166,7 @@
     <Content Include="communityConversation\community\getCommunityUsersHeadImg.ashx" />
     <Content Include="communityConversation\community\getCommunityActivesInfoAndComment.ashx" />
     <Content Include="CommunityHeadImg\cm01.jpg" />
+    <Content Include="communityConversation\community\submitComment.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
