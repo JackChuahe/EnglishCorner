@@ -75,6 +75,8 @@
     <Content Include="testCommon.html" />
     <Content Include="UserContentsImage\contentimg1.jpg" />
     <Content Include="UserContentsImage\contentimg2.jpg" />
+    <Content Include="UserContentsImage\contentImg3.jpg" />
+    <Content Include="UserHeadImg\1772348485%40qq.com_header.jpg" />
     <Content Include="UserHeadImg\601825672%40qq.com_header.jpg" />
     <Content Include="UserHeadImg\993089471%40qq.com_header.jpg" />
     <Content Include="UserHeadImg\default.png" />
@@ -118,6 +120,9 @@
     </Compile>
     <Compile Include="communityConversation\community\getCommunityUsersHeadImg.ashx.cs">
       <DependentUpon>getCommunityUsersHeadImg.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="communityConversation\community\releaseContent.ashx.cs">
+      <DependentUpon>releaseContent.ashx</DependentUpon>
     </Compile>
     <Compile Include="communityConversation\community\submitComment.ashx.cs">
       <DependentUpon>submitComment.ashx</DependentUpon>
@@ -167,6 +172,7 @@
     <Content Include="communityConversation\community\getCommunityActivesInfoAndComment.ashx" />
     <Content Include="CommunityHeadImg\cm01.jpg" />
     <Content Include="communityConversation\community\submitComment.ashx" />
+    <Content Include="communityConversation\community\releaseContent.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

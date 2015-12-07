@@ -74,7 +74,8 @@
                     // 该账号已经存在
                     // 提示用户账号已经存在
                     isEmailExists = true;
-                    alert("该邮箱已经存在");
+                    //alert("该邮箱已经存在");
+                    document.getElementById("emailInputError").innerHTML = "The Email has already exists";
                 }
             });
         } else {
