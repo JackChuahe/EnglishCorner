@@ -21,7 +21,7 @@ namespace WebApplication1.communityConversation.community
             string json = "";
             // 获取需要信息的的社区ID
             string communityID = context.Request.QueryString["communityID"].ToString();
-            if (communityID != null || communityID != "")
+            if (communityID != null && communityID != "")
             {
                 /*
                 *  连接数据库 并返回一条记录

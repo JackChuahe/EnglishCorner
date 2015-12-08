@@ -11,7 +11,7 @@ $(document).ready(function () {
         //alert(json.communityName + "   " + json.communityDesc + "  " + json.headImgUrl);
     });
 
-    // 判断是否有头像和用户名
+    // 判断是否有头像和用户名  判断用户是否有登录 若没有登录 则跳转到社区广场界面
     function getHeaderImg() {
         $.get("../../common/HttpRequest/getHeadImgAndUserEmail.ashx", {}, function (data) {
             if (data.length > 0) {
@@ -25,10 +25,12 @@ $(document).ready(function () {
                     document.getElementById("login_name").innerHTML = jsonValue.last_name;
                 } else {
                     $("#div_headImg_User").hide();
+                    //window.location = "Verify.html?userEmail=" + $("#email").val();
                 }
             } else {
                 //没有头像 隐藏头像div
                 $("#div_headImg_User").hide();
+                //window.location = "Verify.html?userEmail=" + $("#email").val();
             }
         });
 
@@ -56,13 +58,13 @@ $(document).ready(function () {
         var r = window.location.search.substr(1).match(reg);
         if (r != null) return unescape(r[2]); return null;
     }
-    // 提取communityID
-    var v_communityID = GetQueryString("communityID");
+    // 提取相关信息
+   
 
-    v_communityID = 'cm01';    // !!!
 
     // 获取该社区的所有content数据
-    $.get("../community/getCommunityActivesInfoAndComment.ashx", { communityID: v_communityID }, function (allContentsAndComments) {
+    
+    $.get("../myCommunity/getUserCommunityActiveAndComment.ashx", {  }, function (allContentsAndComments) {
         //alert(allContentsAndComments);
         var contents = jQuery.parseJSON(allContentsAndComments).contents;
         //alert(json.contents.length);

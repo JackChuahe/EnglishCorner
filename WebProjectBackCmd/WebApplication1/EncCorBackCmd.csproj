@@ -66,6 +66,11 @@
     <Content Include="common\image\EnCor_logo.png" />
     <Content Include="common\js\jquery-1.9.1.min.js" />
     <Content Include="common\txt\Email.html" />
+    <Content Include="communityConversation\myCommunityWebFront\myCommunity.html" />
+    <Content Include="communityConversation\myCommunityWebFront\css\CommunityStyle.css" />
+    <Content Include="communityConversation\myCommunityWebFront\js\baseJS.js" />
+    <Content Include="communityConversation\myCommunityWebFront\js\gototop.js" />
+    <Content Include="communityConversation\myCommunityWebFront\js\submitComment.js" />
     <Content Include="communityConversation\communityWebFront\Community.html" />
     <Content Include="communityConversation\communityWebFront\css\CommunityStyle.css" />
     <Content Include="communityConversation\communityWebFront\js\baseJS.js" />
@@ -113,6 +118,9 @@
     <Compile Include="common\HttpRequest\getHeadImgAndUserEmail.ashx.cs">
       <DependentUpon>getHeadImgAndUserEmail.ashx</DependentUpon>
     </Compile>
+    <Compile Include="communityConversation\myCommunity\getUserCommunityActiveAndComment.ashx.cs">
+      <DependentUpon>getUserCommunityActiveAndComment.ashx</DependentUpon>
+    </Compile>
     <Compile Include="communityConversation\community\getCommunityActivesInfoAndComment.ashx.cs">
       <DependentUpon>getCommunityActivesInfoAndComment.ashx</DependentUpon>
     </Compile>
@@ -159,6 +167,9 @@
     <Compile Include="userVerify\login\verifyUserLogin.ashx.cs">
       <DependentUpon>verifyUserLogin.ashx</DependentUpon>
     </Compile>
+    <Compile Include="videos\videos\getVideosInfo.ashx.cs">
+      <DependentUpon>getVideosInfo.ashx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="userVerify\login\getHeadImg.ashx" />
@@ -178,6 +189,8 @@
     <Content Include="communityConversation\community\submitComment.ashx" />
     <Content Include="communityConversation\community\releaseContent.ashx" />
     <Content Include="communityConversation\community\uploadImg.ashx" />
+    <Content Include="communityConversation\myCommunity\getUserCommunityActiveAndComment.ashx" />
+    <Content Include="videos\videos\getVideosInfo.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -186,7 +199,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="communityConversation\communitySquare\" />
+    <Folder Include="allVideos\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

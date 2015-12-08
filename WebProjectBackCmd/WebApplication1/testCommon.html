@@ -6,10 +6,11 @@
     <script src="common/js/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" >
         $(document).ready(function () {
-            $.get("common/HttpRequest/getHeadImgAndUserEmail.ashx", {}, function (data) {
+            $.get("videos/videos/getVideosInfo.ashx", {v_type:"*"}, function (data) {
                 
                 if (data != "")
                 {
+                    alert(data);
                     //若有登录成功的情况下
                     //var value = jQuery.parseJSON(data)
                     //alert(value);
