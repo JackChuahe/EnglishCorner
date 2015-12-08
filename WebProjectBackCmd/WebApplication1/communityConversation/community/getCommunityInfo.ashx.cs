@@ -57,6 +57,7 @@ namespace WebApplication1.communityConversation.community
                 {
                     json += "{ \"communityName\":\"" + myDataReader[0] + "\" , \"communityDesc\":\"" + myDataReader[1] + "\" , \"headImgUrl\":\"" +myDataReader[2] +  "\" }";
                 }
+                myDataReader.Close();///
                 myConnection.Close();
 
 
