@@ -28,7 +28,8 @@ namespace WebApplication1.communityConversation.community
             string type = fileName.Substring(index + 1);
             string sPath = System.Web.HttpContext.Current.Request.MapPath("/");
             DateTime date = DateTime.Now;
-            string oppnetDir = "//UserContentsImage//" + "contentImg" + date.Month.ToString()+date.Day.ToString()+date.Hour.ToString()+date.Minute.ToString()+ date.Second.ToString()+date.Millisecond.ToString()+"."+type;
+            string randomTime =  date.Month.ToString()+date.Day.ToString()+date.Hour.ToString()+date.Minute.ToString()+ date.Second.ToString()+date.Millisecond.ToString();
+            string oppnetDir = "//UserContentsImage//" + "contentImg" + randomTime + "." + type;
             string path = sPath +oppnetDir;
             Stream input = context.Request.Files[0].InputStream;
             string json = "{}";
@@ -60,7 +61,7 @@ namespace WebApplication1.communityConversation.community
                 bw.Write(buffer);// 写入流
                 bw.Close();  // 关闭流
                 fs.Close();  // 关闭流
-                context.Session["contentImg"] = "../../" + oppnetDir;
+                context.Session["contentImg"] = "../../UserContentsImage/contentImg" + randomTime + "." + type;
          
             }
             catch (Exception e)

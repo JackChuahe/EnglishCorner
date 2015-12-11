@@ -22,6 +22,7 @@ namespace WebApplication1.communityConversation.community
             context.Response.ContentType = "text/plain";
             string communityID = context.Request.QueryString["communityID"].ToString();
             string text = context.Request.QueryString["text"].ToString();
+
             string contentImg = context.Session["contentImg"].ToString();
             string userEmail = context.Session["userEmail"].ToString();
             bool isOK = false;
@@ -42,7 +43,7 @@ namespace WebApplication1.communityConversation.community
                                           new OracleParameter("v_userEmail",OracleType.VarChar,20),
                                           new OracleParameter("v_communityID", OracleType.VarChar,20),  
                                           new OracleParameter("v_text",OracleType.VarChar,500),
-                                          new OracleParameter("v_picUrl",OracleType.VarChar,50),
+                                          new OracleParameter("v_picUrl",OracleType.VarChar,60),
                                           new OracleParameter("isOK",OracleType.VarChar,2)
                                       };
                 //设置参数类型

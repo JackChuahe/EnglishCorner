@@ -3,40 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <title>Community</title>
+
+    <!--本地js + cs-->
     <link href="../../common/cssFrame/HeaderStyle.css" rel="stylesheet" />
     <link href="../../common/cssFrame/FooterSideBarStyle.css" rel="stylesheet" />
-    <link href="css/CommunityStyle.css" rel="stylesheet" />
+    <!--<script src="../../common/js/jquery-1.9.1.min.js"></script>-->
+
     <script src="../../common/js/jquery-1.9.1.min.js"></script>
-    <script src="js/baseJS.js"></script>
+    <link href="css/CommunityStyle.css" rel="stylesheet" />
+    <script src="../../common/uploadImg/addPic.js"></script>
     <script src="js/gototop.js"></script>
+    <script src="js/submitComment.js"></script>
+    <script src="js/baseJS.js"></script>
+    <script src="js/submitContent.js"></script>
+
+
+
+    <!--uploadImg-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../common/uploadImg/css/fileinput.css" rel="stylesheet" />
+    <script src="../../common/uploadImg/bootstrap.min.js"></script>
+
+
+    <!--<script src="../../common/uploadImg/js/fileinput_locale_fr.js"></script>-->
+    <script src="../../common/uploadImg/js/fileinput.js"></script>
+    <script src="../../common/uploadImg/js/fileinput_locale_es.js"></script>
+
+
+
+
 </head>
 <body class="body">
 <!-- 悬浮标题框 -->
 <div class="header">
-    <div id="NavigationHeaderBlock" class="floatHeader">
+    <div class="floatHeader">
         <div>
-            <a id="logo" class="logo" href="#">
+            <a class="logo" href="#">
                 <img src="../../common/image/EnCor_logo.png" style="width: inherit;height: 47px" title="logo" />
             </a>
         </div>
         <div id="div_headImg_User">
             <a class="userHeadPic" href="#">
-                <img id="login_headImg" src="../../common/image/headimg.png" />
+                <img id="login_headImg" src="">
             </a>
-            <a id="userName" class="userName" href="#">
+            <a class="userName" href="#">
                 <div id="login_name">name</div>
             </a>
         </div>
         <div id="div_signIn">
             <div class="signBtn">
                 <a href="../../userVerify/loginWebFront/SignIn.html">
-                <input type="button" name="Sign in" value="Sign in"
-                       id="sign_In" class="sign"></a>
+                    <input type="button" name="Sign in" value="Sign in"
+                           id="sign_In" class="sign">
+                </a>
             </div>
         </div>
     </div>
     <!--导航bar-->
-    <div id="navigationBar" class="header_wrapper">
+    <div class="header_wrapper">
         <div class="navMenu">
             <a href="#">
                 <div class="select">Welcome</div>
@@ -71,9 +95,7 @@
             </div>
             <div  class="article" style="margin:0 auto;width: 180px">
                 <article style="font-family: 'Microsoft YaHei UI';font-size: smaller">
-                    <p id="article">
- 
-                    </p>
+                    <p id="article"></p>
                 </article>
             </div>
             <div class="pic">
@@ -105,7 +127,7 @@
             </div>
             <div>
                 <div id="div_usersImg" style="width: 200px;margin-left: 10px">
- 
+
                 </div>
 
             </div>
@@ -116,165 +138,30 @@
     <div class="rightBox">
 
         <div id="leftView" class="leftView">
-            <div class="say">
+            <div id="say" class="say">
                 <div class="sayWords">
-                    <textarea class="sayInput" placeholder="What new things to share? in 150 words"></textarea>
+                    <textarea id="sayInput" class="sayInput" placeholder="What new things to share?"></textarea>
 
-                    <div class="error">error</div>
+                    <div id="say_error" class="error"></div>
                 </div>
                 <div class="add">
-                    <a href="#">
+                    <a href="javascript:opendiv(1)" id="addPic">
                         <svg width="24px" height="24px" viewBox="-1 0 24 24" fill="#757575">
                             <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"></path>
                         </svg>
                     </a>
-                    <a href="#">
-                        <svg width="24px" height="24px" viewBox="-1 0 24 24" fill="#757575">
-                            <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path>
-                        </svg>
-                    </a>
-                    <a href="#">
-                        <svg width="24px" height="24px" viewBox="-1 0 24 24" fill="#757575">
-                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path>
-                        </svg>
-                    </a>
-                    <span style="margin-left: 145px"></span>
-                    <input class="submit sign" type="submit" name="submit" value="submit" title="submit">
+               
+                    <!--<img src="../../UserContentsImage/contentimg2.jpg" height="70px" width="45px" />-->
+                    <span style="margin-left: 210px"></span>
+                    <input id="submitContentBtn" class="submit sign" type="submit" name="submit" value="submit" title="submit">
                 </div>
             </div>
-             <!--左边内容开始位置--> 
-            <!--<div class="box">
-                <div class="contentTitle">
-                    <a id="cUserHead" href="#">
-                        <div class="imgHead">
-                            <img src="image/photo1.jpg">
-                        </div>
-                    </a>
-                    <a id="cUserName" href="#">
-                        <div class="name">James Bond</div>
-                    </a>
 
-                    <div id="sTime" class="time">by 14:00</div>
-                </div>
-                <div class="clear"></div>
-                <div class="content">
-                    <div class="article">
-                        why do some people choose this phone? why do some people choose this phone?
-                    </div>
-                    <div class="line"></div>
-                    <div class="image">
-                        <img src="image/1-14022221310J95.webp">
-                    </div>
-                </div>
-                <div class="comment">
-                    <div class="plusArea">
-                        <div class="plus">+1</div>
-                    </div>
-                    <div class="line"></div>
-                    <textarea class="commentArea" placeholder="what new thing to share?"></textarea>
+        
+        </div>
 
-                    <div class="error">error</div>
-                    <a href="#" class="commentbtn">
-                        <span>comment</span>
-                    </a>
-
-                    <div class="line"></div>
-                    <div class="oldComments">
-                        <div class="oldimg">
-                            <a href="#">
-                                <img src="image/photo2.jpg">
-                            </a>
-                        </div>
-                        <div class="oldname">
-                            <a href="#">james :</a><span>You can study English and Practicing English and begin conversations for free with other people around the world ,You can study English and Practicing English</span>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-
-                    <div class="line"></div>
-                    <div class="oldComments">
-                        <div class="oldimg">
-                            <a href="#">
-                                <img src="image/photo2.jpg">
-                            </a>
-                        </div>
-                        <div class="oldname">
-                            <a href="#">james :</a><span>You can study English and Practicing English and begin conversations for free with other people around the world ,You can study English and Practicing English</span>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-
-
-                    <div style="height: 10px"></div>
-                </div>
-            </div>-->
-
-           
-        </div> <!-- 左边结束位置 -->
-
-        <div id="rightView" class="rightView">
-            <!--<div class="box">
-            <div class="contentTitle">
-                <a id="1" href="#">
-                    <div class="imgHead">
-                        <img src="image/photo2.jpg">
-                    </div>
-                </a>
-                <a id="2" href="#">
-                    <div class="name">James Bond</div>
-                </a>
-
-                <div id="3" class="time">by 14:00</div>
-            </div>
-            <div class="clear"></div>
-            <div class="content">
-                <div class="article">
-                    why do some people choose this phone? why do some people choose this phone?
-                </div>
-                <div class="line"></div>
-                <div class="image">
-                    <img src="image/15%20-%201.webp">
-                </div>
-            </div>
-            <div class="comment">
-                <div class="plusArea">
-                    <div class="plus">+1</div>
-                </div>
-                <div class="line"></div>
-                <textarea id="commentArea" class="commentArea" placeholder="What new things to share?"></textarea>
-
-                <div class="error">error</div>
-                <a href="#" class="commentbtn">
-                    <span>comment</span>
-                </a>
-
-                <div class="line"></div>
-                <div class="oldComments">
-                    <div class="oldimg">
-                        <a href="#">
-                            <img src="image/photo2.jpg">
-                        </a>
-                    </div>
-                    <div class="oldname">
-                        <a href="#">james :</a><span>You can study English and Practicing English and begin conversations for free with other people around the world ,You can study English and Practicing English</span>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-                <div class="line"></div>
-                <div class="oldComments">
-                    <div class="oldimg">
-                        <a href="#">
-                            <img src="image/photo2.jpg">
-                        </a>
-                    </div>
-                    <div class="oldname">
-                        <a href="#">james :</a><span>You can study English and Practicing English and begin conversations for free with other people around the world ,You can study English and Practicing English</span>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-                <div style="height: 10px"></div>
-            </div>
-        </div>-->
+        <div class="rightView">
+         
 
         </div>
         <div class="clear"></div>
@@ -288,11 +175,67 @@
 <!--悬浮按钮-->
 
 <div class="sideBar">
-    <a id="goToTop" class="goTop" href="#">
-        <img src="image/right_bg.png" style="margin-top: 5px;margin-left: 5px;width: 35px;height: 35px">
-    </a>
+    <!--<a id="goToWrite" class="goToWrite" href="#" title="back to write"></a>-->
+   
+    
+     <!--<a id="goToTop" class="goTop" href="#" title="go to top">
+        <img src="../../common/image/right_bg.png" style="margin-top: 5px;margin-left: 5px;width: 35px;height: 35px">   
+    </a>-->
 </div>
 
-    <script src="js/submitComment.js"></script>
+<!--添加图片-->
+<div id="addImg" class="addImg">
+    <div class="topBar">
+    <a id="close_btn" href="#" ><div class="closeBtn closeBtnS" title="close the dialog" ><span>×</span></div></a>
+    </div>
+    <div style="width:340px; ">
+        <form enctype="multipart/form-data">
+            <div class="form-group" >
+                <label style="color: #3277e1">Set Your Image</label>
+                <input id="file-3" type="file" multiple=true>
+            </div>
+        </form>
+    </div>
+</div>
+
+  
+<a id='mask' href='#' title='close this dialog'></a>
+    <script>
+
+        // 给go to top按钮一个点击事件
+        function clickToTop() {
+            $("html,body").animate({ scrollTop: 0 }, 800);//点击go to top按钮时，以800的速度回到顶部，这里的800可以根据你的需求修改
+            return false;
+        };
+
+        $(document).ready(function () {
+
+            $("#goToWrite").hide();  // 隐藏书写按钮
+            $("#goToTop").hide()//隐藏go to top按钮
+            $(function () {
+                $(window).scroll(function () {
+                    if ($(this).scrollTop() > 200) {//当window的scrolltop距离大于1时，go to top按钮淡出，反之淡入
+
+                        $(".header_wrapper").css("background-color", "#FFFFFF");
+
+                        $("#goToTop").fadeIn();
+                        $("#goToWrite").fadeIn();
+                        $(".floatHeader").fadeOut();
+
+                    } else {
+                        $(".header_wrapper").css("background-color", "rgba(218, 218, 218, 0.50)");
+
+                        $("#goToTop").fadeOut();
+                        $("#goToWrite").fadeOut();
+                        $(".floatHeader").fadeIn();
+                    }
+                });
+            });
+
+
+
+        });
+    </script>
 </body>
+
 </html>

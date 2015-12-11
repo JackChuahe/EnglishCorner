@@ -67,7 +67,7 @@ namespace WebApplication1.communityConversation.community
                  * 再通过content的ID 逐个去获取每一个content的评论 即评论者的headImg url
                  */
                 ArrayList contentComments = new ArrayList();
-                for (int i = 0; i < contents.Count; i++)
+                for (int i =0; i < contents.Count; i++)
                 {
                     MyContentRecord tempContent = (MyContentRecord)contents[i];  // 提出第一条数据
 

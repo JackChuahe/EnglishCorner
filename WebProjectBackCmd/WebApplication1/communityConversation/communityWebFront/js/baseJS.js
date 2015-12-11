@@ -1,8 +1,13 @@
 ﻿
 // 蔡何  2015.12.3
 $(document).ready(function () {
+
+    // 提取communityID
+    var v_communityID = GetQueryString("communityID");
+
+    v_communityID = 'cm01';    // !!!
     // 获取社区基本信息
-    $.get("../community/getCommunityInfo.ashx", { communityID: "cm01" }, function (cInfo) {
+    $.get("../community/getCommunityInfo.ashx", { communityID: v_communityID }, function (cInfo) {
         var json = jQuery.parseJSON(cInfo);
         document.getElementById("title").innerHTML = json.communityName;
         document.getElementById("article").innerHTML = json.communityDesc;
@@ -19,15 +24,28 @@ $(document).ready(function () {
                 //加载头像
                 var jsonValue = jQuery.parseJSON(data);
                 if (jsonValue.isLogin == "true") {
+                    var html = "<a id=\"goToWrite\" class=\"goToWrite\" href=\"javascript:clickToTop()\" title=\"back to write\"></a>";
+                    $(".sideBar").append(html); //
+
+                    // 显示发表动态的框框
+                    $("#say").show();
+
                     $("#div_signIn").hide();
                     $("#div_headImg_User").show();
                     document.getElementById("login_headImg").src = jsonValue.headImgUrl;
                     document.getElementById("login_name").innerHTML = jsonValue.last_name;
                 } else {
+                    // 未登录的情况
+                    $("#say").hide();
+                    var html = "<a id=\"goToTop\" class=\"goTop\" href=\"javascript:clickToTop()\" title=\"go to top\"><img src=\"../../common/image/right_bg.png\" style=\"margin-top: 5px;margin-left: 5px;width: 35px;height: 35px\"></a>";
+                    $(".sideBar").append(html);
                     $("#div_headImg_User").hide();
                 }
             } else {
                 //没有头像 隐藏头像div
+                $("#say").hide();
+                var html = "<a id=\"goToTop\" class=\"goTop\" href=\"javascript:clickToTop()\" title=\"go to top\"><img src=\"../../common/image/right_bg.png\" style=\"margin-top: 5px;margin-left: 5px;width: 35px;height: 35px\"></a>";
+                $(".sideBar").append(html);
                 $("#div_headImg_User").hide();
             }
         });
@@ -37,10 +55,11 @@ $(document).ready(function () {
     getHeaderImg();
 
     // 获取这个社区的用户头像
-    $.get("../community/getCommunityUsersHeadImg.ashx", { communityID: "cm01" }, function (cInfo) {
+    $.get("../community/getCommunityUsersHeadImg.ashx", { communityID: v_communityID }, function (cInfo) {
         var json = jQuery.parseJSON(cInfo);
         var div_usersImg = document.getElementById("div_usersImg");
         var tempStr = "";
+        //alert(cInfo);
         for (var i = 0 ; i < json.headImages.length - 1 ; i++) {
             // var tempJson = json.headImages[0].url;
             tempStr += "<div style=\"width: 34px;height: 34px;margin: 3px;float: left\"><img src=\"" + json.headImages[i].url + "\" height=\"34px\" width=\"34px\" style=\"border-radius: 4px\"></div>";
@@ -56,16 +75,15 @@ $(document).ready(function () {
         var r = window.location.search.substr(1).match(reg);
         if (r != null) return unescape(r[2]); return null;
     }
-    // 提取communityID
-    var v_communityID = GetQueryString("communityID");
 
-    v_communityID = 'cm01';    // !!!
 
     // 获取该社区的所有content数据
     $.get("../community/getCommunityActivesInfoAndComment.ashx", { communityID: v_communityID }, function (allContentsAndComments) {
         //alert(allContentsAndComments);
-        var contents = jQuery.parseJSON(allContentsAndComments).contents;
-        //alert(json.contents.length);
+        //$("#article").html(allContentsAndComments);
+        //alert("ok");
+       var contents = jQuery.parseJSON(allContentsAndComments).contents;
+       //alert(contents.length);
         //alert(json.contents[0].contentID);
        // var comments = contents[0].comments;
         // alert(comments.length);
@@ -86,7 +104,7 @@ $(document).ready(function () {
          "<div class=\"comment\" id=\"commentDiv_"+contents[i].contentID+"\"><div class=\"plusArea\"><div class=\"plus\">+1</div></div>" +
          "<div class=\"line\"></div><textarea id=\"newComment_" + contents[i].contentID + "\" class=\"commentArea\" placeholder=\"what new thing to share?\"></textarea>" +
           "<div class=\"error\" id=\"commentError_"+contents[i].contentID+ "\"></div>" +
-         "<a  onclick=\"javascript:submitComment(this.id)\" class=\"commentbtn\" id=\"" + contents[i].contentID + "\">" +
+         "<a herf=\"#\" onclick=\"javascript:submitComment(this.id)\" class=\"commentbtn\" id=\"" + contents[i].contentID + "\">" +
           "<span>comment</span></a>";
 
             //
@@ -105,16 +123,16 @@ $(document).ready(function () {
             //<div style=\"height: 10px\"></div>
             appentContent += "</div></div></div>";
             
-            var leftHeight = $("#leftView").outerHeight(true);
-            var rightHeight = $("#rightView").outerHeight(true);
+            var leftHeight = $(".leftView").outerHeight(true);
+            var rightHeight = $(".rightView").outerHeight(true);
             //alert("right" + rightHeight);
             //alert("left" + leftHeight);
 
             if (leftHeight < rightHeight)
             {
-                $("#leftView").append(appentContent);
+                $(".leftView").append(appentContent);
             } else {
-                $("#rightView").append(appentContent);
+                $(".rightView").append(appentContent);
             }
            
             appentContent = "";
