@@ -65,7 +65,9 @@
     <Content Include="common\image\bottom.png" />
     <Content Include="common\image\EnCor_logo.png" />
     <Content Include="common\image\logo_min.png" />
+    <Content Include="common\image\V.png" />
     <Content Include="common\image\write.png" />
+    <Content Include="common\image\X.png" />
     <Content Include="common\js\jquery-1.9.1.min.js" />
     <Content Include="common\js\jquery-2.1.4.js" />
     <Content Include="common\js\jquery-2.1.4.min.js" />
@@ -195,6 +197,12 @@
     <Compile Include="userVerify\createAccount\isAccountExists.ashx.cs">
       <DependentUpon>isAccountExists.ashx</DependentUpon>
     </Compile>
+    <Compile Include="userVerify\createAccount\reciveHeadImg.ashx.cs">
+      <DependentUpon>reciveHeadImg.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="userVerify\createAccount\setProfileInfo.ashx.cs">
+      <DependentUpon>setProfileInfo.ashx</DependentUpon>
+    </Compile>
     <Compile Include="userVerify\createAccount\setServerToken.ashx.cs">
       <DependentUpon>setServerToken.ashx</DependentUpon>
     </Compile>
@@ -235,6 +243,8 @@
     <Content Include="videos\videos\getVideosInfo.ashx" />
     <Content Include="common\uploadImg\nuget\build.bat" />
     <Content Include="common\uploadImg\nuget\Package.nuspec" />
+    <Content Include="userVerify\createAccount\setProfileInfo.ashx" />
+    <Content Include="userVerify\createAccount\reciveHeadImg.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

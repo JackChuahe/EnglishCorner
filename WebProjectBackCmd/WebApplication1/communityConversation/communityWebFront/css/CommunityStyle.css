@@ -401,3 +401,44 @@
 .commentbtn:hover {
     box-shadow:#4d4d4d 0 0 1px;
 }
+
+
+
+.submitLoading{
+    width: 400px;
+    height: 120px;
+    margin:auto;
+    margin-top: 100px;
+    padding: 10px;
+    position: fixed;
+    left: 400px;
+    z-index: 1100;
+    background-color: #ffffff;
+    border-radius: 10px;
+    float: left;
+    display: none;
+}
+.attention{
+margin-top: 5px;
+}
+.a_img{
+    margin-left: 10px;
+    width: 90px;
+    height: 90px;
+    float: left;
+}
+.a_img img{
+    width: 90px;
+    height: 90px;
+}
+
+#attention{
+    margin-top: 20px;
+    float: left;
+    width: 270px;
+    text-align: center;
+    /*background-color:#8f8f8f;*/
+    font-family: "Yu Gothic UI";
+    color: #4d4d4d;
+    font-size: 30px;
+}
