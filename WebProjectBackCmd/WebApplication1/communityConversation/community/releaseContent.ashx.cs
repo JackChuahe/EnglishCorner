@@ -26,6 +26,7 @@ namespace WebApplication1.communityConversation.community
             string contentImg = context.Session["contentImg"].ToString();
             string userEmail = context.Session["userEmail"].ToString();
             bool isOK = false;
+            context.Session["contentImg"] = null;
             /*
              * 连接数据库
              */

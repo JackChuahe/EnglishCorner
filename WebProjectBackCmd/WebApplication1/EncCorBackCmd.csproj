@@ -163,6 +163,9 @@
     <Compile Include="common\HttpRequest\getHeadImgAndUserEmail.ashx.cs">
       <DependentUpon>getHeadImgAndUserEmail.ashx</DependentUpon>
     </Compile>
+    <Compile Include="communityConversation\community\getNowSubmitImg.ashx.cs">
+      <DependentUpon>getNowSubmitImg.ashx</DependentUpon>
+    </Compile>
     <Compile Include="communityConversation\myCommunity\getUserCommunityActiveAndComment.ashx.cs">
       <DependentUpon>getUserCommunityActiveAndComment.ashx</DependentUpon>
     </Compile>
@@ -245,6 +248,7 @@
     <Content Include="common\uploadImg\nuget\Package.nuspec" />
     <Content Include="userVerify\createAccount\setProfileInfo.ashx" />
     <Content Include="userVerify\createAccount\reciveHeadImg.ashx" />
+    <Content Include="communityConversation\community\getNowSubmitImg.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

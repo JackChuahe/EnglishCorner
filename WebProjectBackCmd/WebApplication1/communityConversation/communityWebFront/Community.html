@@ -153,9 +153,7 @@
                             <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"></path>
                         </svg>
                     </a>
-               
-                    <!--<img src="../../UserContentsImage/contentimg2.jpg" height="70px" width="45px" />-->
-                    <span style="margin-left: 210px"></span>
+                    <img id="pre_img" src="">
                     <input id="submitContentBtn" class="submit sign" type="submit" name="submit" value="submit" title="submit">
                 </div>
             </div>
@@ -252,7 +250,27 @@
             });
 
 
+            //当点击了关闭该弹窗的按钮时
+            $("#close_btn").on('click', function () {
+                //获取网络资源
+                $.get("../community/getNowSubmitImg.ashx", {}, function (url) {
+                    if (url.length > 0) {
+                        // 有上传成功
+                        var pre_img = document.getElementById("pre_img");
+                        pre_img.src = url;
+                        $("#pre_img").show();
+                    } else {
+                        //没有图片
+                        $("#pre_img").hide();
+                    }
+                });
 
+                $("#addImg").fadeOut("slow");
+                $("#mask").fadeOut("slow");
+
+
+                return false;
+            });
         });
     </script>
 </body>

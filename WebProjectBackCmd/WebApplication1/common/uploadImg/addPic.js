@@ -25,11 +25,11 @@ $(function ($) {
         return false;
     });
 
-    $("#close_btn").on('click', function () {
+   /* $("#close_btn").on('click', function () {
         $("#addImg").fadeOut("slow");
         $("#mask").fadeOut("slow");
         return false;
-    });
+    });*/
 
     $("#file-3").fileinput({
         showUpload: true,
