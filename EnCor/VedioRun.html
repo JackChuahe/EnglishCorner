@@ -6,34 +6,34 @@
     <link href="css/HeaderStyle.css" type="text/css" rel="stylesheet">
     <link href="css/videoRunStyle.css" type="text/css" rel="stylesheet">
     <link href="css/FooterSideBarStyle.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/gototop.js"></script>
 </head>
 <body class="body">
 <!-- 悬浮标题框 -->
 <div class="header">
     <div class="floatHeader">
         <div>
-            <a href="#" id="logo" class="logo">
-                <img src="image/logo.png" title="logo" style="width: inherit;height: 47px"/>
+            <a class="logo" href="../Html/Welcome.html" title="logo"></a>
+        </div>
+        <div id="div_headImg_User">
+            <a class="userHeadPic" href="#">
+                <img id="userHeadPic" src="../image/headimg.png">
+            </a>
+            <a class="userName" href="#">
+                <div id="login_name">name</div>
             </a>
         </div>
-        <div>
-            <a id="userHeadPic" class="userHeadPic" href="#">
-                <img src="image/headimg.png">
-            </a>
-        </div>
-        <div>
-            <a href="#" id="userName" class="userName">
-                <div>name</div>
-            </a>
-
+        <div id="div_signIn">
             <div class="signBtn">
-                <input type="button" name="Sign in" value="Sign in"
-                       onclick=""
-                       id="sign_In" class="sign">
+                <a href="../Html/SignIn.html">
+                    <input type="button" name="Sign in" value="Sign in"
+                           id="sign_In" class="sign">
+                </a>
             </div>
         </div>
     </div>
-    <!-- 导航bar -->
+    <!--导航bar-->
     <div class="header_wrapper">
         <div class="navMenu">
             <a href="#">
@@ -103,10 +103,9 @@
 </div>
 <!--悬浮按钮-->
 <div class="sideBar">
-    <a class="goTop" href="">顶部
-        <img src="image/right_bg.png" style="margin-top: 5px;margin-left: 5px;width: 35px;height: 35px">
+    <a id="goToTop" class="goTop" href="#">
+        <img src="image/right_bg.png" style="margin-top: 5px;margin-left: 5px;width: 35px;height: 35px" title="go to top">
     </a>
-
 </div>
 </body>
 </html>

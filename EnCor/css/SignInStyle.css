@@ -13,12 +13,18 @@
     width: 340px;
     height: 120px;
     margin: auto;
+    /*background-color: #8bdffe;*/
 }
-
+.logoC{
+    margin:auto;
+    width: 120px;
+    height: 50px;
+}
 .logo {
     width: 120px;
     height: 50px;
-    margin: auto;
+    float: left;
+    background-image: url("../image/EnCor_logo_min.png");
 }
 
 .title {

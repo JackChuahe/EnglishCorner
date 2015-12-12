@@ -1,0 +1,81 @@
+.communitiesBox{
+    width: 1230px;
+    margin: auto;
+}
+
+.leftBox{
+    width: 260px;
+    float: left;
+}
+
+.rightBox{
+    width: 950px;
+    /*background-color: #9c9c9c;*/
+    float: right;
+}
+.lBox{
+    width: 255px;
+    background-color: white;
+    margin: auto;
+    margin-bottom: 2px;
+    box-shadow: #9c9c9c 0 2px 2px;
+    border-radius: 3px;
+}
+.first{
+    height: 50px;
+}
+
+.second{
+    height: 100px;
+}
+
+.thrid{
+    height: 150px;
+}
+
+
+.box{
+    width: 217px;
+    height: 240px;
+    background-color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    box-shadow: #9c9c9c 0 2px 2px;
+    border-radius: 3px;
+    float: left;
+}
+
+.box:hover{
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1), 0 4px 8px 0 rgba(0,0,0,0.2);
+
+}
+
+.backImg{
+    width:217px ;
+    height: 120px;
+    /*background-image: url("../image/IMG_4899.webp");*/
+}
+
+.backImg img{
+    width:217px ;
+    height: 120px;
+}
+
+.firstUser{
+    margin-left: 20px;
+    margin-top: 105px;
+    float: left;
+}
+.firstUser img{
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    box-shadow: #388e3c 0 0 2px ;
+}
+
+.disc{
+    width:217px ;
+    height: 120px;
+background-color: #388e3c;
+}
