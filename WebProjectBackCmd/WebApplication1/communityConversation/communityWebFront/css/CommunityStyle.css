@@ -184,8 +184,8 @@
     float: left;
     background-color: #ffffff;
     border-radius: 2px;
-    -webkit-box-shadow: #8f8f8f 0px 0px 2px;
-    box-shadow: #8f8f8f 0px 0px 2px;
+    -webkit-box-shadow: #8f8f8f 0px 2px 10px;
+    box-shadow: #8f8f8f 0px 2px 10px;
 }
 
 .box:hover {
@@ -211,6 +211,8 @@
 }
 
 .name {
+    color:#000000;
+    font-weight:500;
     float: left;
     margin-left: 10px;
     margin-top: 15px;
@@ -236,6 +238,10 @@
 
 .article {
 
+    margin: auto;
+    width: 310px;
+    font-family: "Microsoft JhengHei UI";
+    font-size:small;
     color: #696969;
 }
 
@@ -280,6 +286,8 @@
     font-size: smaller;
     margin: 5px;
     margin-left:10px;
+    border:none;
+    background-color:greenyellow;
 }
 
 .oldComments img{
@@ -377,4 +385,19 @@
     background-image: -ms-linear-gradient(top, #ff1311, #da100f);
     background-image: -o-linear-gradient(top, #ff1311, #da100f);
     background-image: linear-gradient(top, #ff1311, #da100f);
+}
+
+
+.commentbtn {
+    font-size: smaller;
+    text-shadow: #4d4d4d;
+    margin-left:10px;
+    border-radius: 2px;
+    border:1px solid #959595;
+    color: #4d4d4d;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.commentbtn:hover {
+    box-shadow:#4d4d4d 0 0 1px;
 }

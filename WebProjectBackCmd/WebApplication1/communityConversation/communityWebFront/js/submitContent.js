@@ -34,7 +34,7 @@ $(document).ready(function () {
         //获取当前社区的ID communityID
         var v_communityID = GetQueryString("communityID");
 
-        v_communityID = "cm01";
+        v_communityID = "cm02";
         //发送到后台
         $.get("../community/releaseContent.ashx", { communityID: v_communityID, text: text }, function (data) {
             if (data == "False") {

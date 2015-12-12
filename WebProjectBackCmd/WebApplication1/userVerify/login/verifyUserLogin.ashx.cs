@@ -33,6 +33,7 @@ namespace WebApplication1.userVerify.login
             // 去token
             string pwd = deleteToken(pwdWithToken,context.Session["token"].ToString());
             //再进行md5 加密
+            //md5Pwd = "dd4b21e9ef71e1291183a46b913ae6"
             string md5Pwd = Md5.endcodeMd5(pwd);       // 调用md5类 
             //md5Pwd = "    "
             {

@@ -137,9 +137,33 @@ a{
     float: left;
     border-radius: 3px;
     color: rgb(95, 95, 95);
+
+}
+
+.select:hover{
+    border-bottom: 2px solid #377ce8 ;
 }
 
 .navMenu div{
     text-align:center
 }
 
+
+.logo_min{
+    width:120px;
+    height: 35px;
+    background-color: #3277e1;
+    background-image: -webkit-linear-gradient(left, #3277E1, #ededed);
+    background-image: -moz-linear-gradient(left, #3277E1, #EDEDED);
+    background-image: -ms-linear-gradient(left, #3277E1, #EDEDED);
+    background-image: -o-linear-gradient(left, #3277E1, #EDEDED);
+    background-image: linear-gradient(left, #3277E1, #EDEDED);
+    float: left;
+}
+.logo_min_img{
+    margin-left: 15px;
+    width: 35px;
+    height: 35px;
+    background-image: url("../../common/image/logo_min.png");
+
+}

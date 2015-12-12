@@ -61,12 +61,15 @@
     </div>
     <!--导航bar-->
     <div class="header_wrapper">
+
+        <div class="logo_min"><div class="logo_min_img"></div></div>
+
         <div class="navMenu">
             <a href="#">
                 <div class="select">Welcome</div>
             </a>
             <a href="#">
-                <div class="select">Community</div>
+                <div class="select" style="border-bottom: 2px solid #888">Community</div>
             </a>
             <a href="#">
                 <div class="select">Videos</div>
@@ -212,19 +215,21 @@
 
             $("#goToWrite").hide();  // 隐藏书写按钮
             $("#goToTop").hide()//隐藏go to top按钮
+            $(".logo_min").hide()//隐藏 min logo
             $(function () {
                 $(window).scroll(function () {
                     if ($(this).scrollTop() > 200) {//当window的scrolltop距离大于1时，go to top按钮淡出，反之淡入
 
                         $(".header_wrapper").css("background-color", "#FFFFFF");
-
+                        $(".logo_min").fadeIn();
+                        
                         $("#goToTop").fadeIn();
                         $("#goToWrite").fadeIn();
                         $(".floatHeader").fadeOut();
 
                     } else {
                         $(".header_wrapper").css("background-color", "rgba(218, 218, 218, 0.50)");
-
+                        $(".logo_min").fadeOut();
                         $("#goToTop").fadeOut();
                         $("#goToWrite").fadeOut();
                         $(".floatHeader").fadeIn();

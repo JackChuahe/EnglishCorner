@@ -64,6 +64,7 @@
     <Content Include="common\cssFrame\HeaderStyle.css" />
     <Content Include="common\image\bottom.png" />
     <Content Include="common\image\EnCor_logo.png" />
+    <Content Include="common\image\logo_min.png" />
     <Content Include="common\image\write.png" />
     <Content Include="common\js\jquery-1.9.1.min.js" />
     <Content Include="common\js\jquery-2.1.4.js" />
@@ -227,7 +228,6 @@
     <Content Include="communityConversation\community\getCommunityInfo.ashx" />
     <Content Include="communityConversation\community\getCommunityUsersHeadImg.ashx" />
     <Content Include="communityConversation\community\getCommunityActivesInfoAndComment.ashx" />
-    <Content Include="CommunityHeadImg\cm01.jpg" />
     <Content Include="communityConversation\community\submitComment.ashx" />
     <Content Include="communityConversation\community\releaseContent.ashx" />
     <Content Include="communityConversation\community\uploadImg.ashx" />
@@ -244,6 +244,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="allVideos\" />
+    <Folder Include="CommunityHeadImg\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -5,7 +5,7 @@ $(document).ready(function () {
     // 提取communityID
     var v_communityID = GetQueryString("communityID");
 
-    v_communityID = 'cm01';    // !!!
+    v_communityID = 'cm02';    // !!!
     // 获取社区基本信息
     $.get("../community/getCommunityInfo.ashx", { communityID: v_communityID }, function (cInfo) {
         var json = jQuery.parseJSON(cInfo);
@@ -95,17 +95,15 @@ $(document).ready(function () {
         for (var i = 0 ; i < contents.length ; i++) {
             appentContent += "<div class=\"box\"><div class=\"contentTitle\"><a id=\"cUserHead\" href=\"#\"><div class=\"imgHead\">" +
         "<img src=\"" + contents[i].submitUserHeadImg + "\">" +
-         "</div></a><a id=\"cUserName\" href=\"#\">" +
+         "</div></a><span id=\"cUserName\" >" +
          "<div class=\"name\">" + contents[i].submitUserName + "</div>" +
-          "</a><div id=\"sTime\" class=\"time\">" + contents[i].submitTime + "</div>" +
+          "</span><div id=\"sTime\" class=\"time\">" + contents[i].submitTime + "</div>" +
           "</div><div class=\"clear\"></div><div class=\"content\"><div class=\"article\">" +
           contents[i].text + "</div><div class=\"line\"></div><div class=\"image\">" +
           "<img src=\"" + contents[i].textPicUrl + "\"></div></div>" +
          "<div class=\"comment\" id=\"commentDiv_"+contents[i].contentID+"\"><div class=\"plusArea\"><div class=\"plus\">+1</div></div>" +
          "<div class=\"line\"></div><textarea id=\"newComment_" + contents[i].contentID + "\" class=\"commentArea\" placeholder=\"what new thing to share?\"></textarea>" +
-          "<div class=\"error\" id=\"commentError_"+contents[i].contentID+ "\"></div>" +
-         "<a herf=\"#\" onclick=\"javascript:submitComment(this.id)\" class=\"commentbtn\" id=\"" + contents[i].contentID + "\">" +
-          "<span>comment</span></a>";
+          "<button onclick=\"javascript:submitComment(this.id)\" class=\"commentbtn\" id=\""+contents[i].contentID+"\"><span>comment</span></button><div class=\"error\" id=\"commentError_" + contents[i].contentID + "\"></div>" ;
 
             //
             var comments = contents[i].comments;
