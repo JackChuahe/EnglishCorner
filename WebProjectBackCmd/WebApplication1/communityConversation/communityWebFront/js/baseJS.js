@@ -93,7 +93,7 @@ $(document).ready(function () {
         // 每一个评论的DIV 的ID 为 commentDiv_ + contentID
         var appentContent = "";
         for (var i = 0 ; i < contents.length ; i++) {
-            appentContent += "<div class=\"box\"><div class=\"contentTitle\"><a id=\"cUserHead\" href=\"#\"><div class=\"imgHead\">" +
+            appentContent += "<div  id=\""+i+"\" class=\"box\"><div class=\"contentTitle\"><a id=\"cUserHead\" href=\"#\"><div class=\"imgHead\">" +
         "<img src=\"" + contents[i].submitUserHeadImg + "\">" +
          "</div></a><span id=\"cUserName\" >" +
          "<div class=\"name\">" + contents[i].submitUserName + "</div>" +
@@ -128,10 +128,14 @@ $(document).ready(function () {
 
             if (leftHeight < rightHeight)
             {
-                $(".leftView").append(appentContent);
+                $(".leftView").append(appentContent).fadeIn("slow");
             } else {
-                $(".rightView").append(appentContent);
+                $(".rightView").append(appentContent).fadeIn("slow");
             }
+            //动画效果
+           // alert("o");
+           /* $("#" + i).hide();
+            $("#" + i).delay(500 * i * 0.2).fadeIn("slow");*/
            
             appentContent = "";
 

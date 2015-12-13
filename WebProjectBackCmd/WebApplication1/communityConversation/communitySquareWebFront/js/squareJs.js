@@ -6,14 +6,14 @@ $(document).ready(function () {
 
         var communities = jQuery.parseJSON(data).communities;
         var myColor = new Array("red", "dGreen", "orange", "pink", "yellow", "gray", "green", "blue", "brown", "purple");
-
+        //../communityWebFront/Community.html?communityID=  communities[i].communityID +
         for (var i = 0 ; i < communities.length ; i++) {
-            var html = "<a href=\"../communityWebFront/Community.html?communityID=" + communities[i].communityID + "\"><div id=\"" + i + "\" class=\"box\" >" +
-                "<div class=\"backImg\"><img src=\"" + communities[i].communityPic+ "\" /></div>" +
+            var html = "<div id=\"" + i + "\" class=\"box\" >" +
+                "<a href=\"../communityWebFront/Community.html?communityID=" + communities[i].communityID + "\"><div class=\"backImg\"><img src=\"" + communities[i].communityPic + "\" /></div></a>" +
                 "<div class=\"firstUser\"><img src=\"" + communities[i].headImageUrl + "\" />" +
                 "</div><div class=\"clear\"></div><div class=\"disc\"><div style=\"height: 18px\"></div>" +
                 "<div class=\"communityName\">" + communities[i].communityName + "</div><div class=\"activator\">" + communities[i].userName + "</div>" +
-                "<button class=\"commentbtn\" id=\"" + communities[i].communityID + "\" onclick=\"javascript:fellowToComnunity(this.id)\" value=\"\">Follow</button>" + "</div></div></a>";
+                "<button class=\"commentbtn\" id=\"" + communities[i].communityID + "\" onclick=\"javascript:fellowToComnunity(this.id)\" value=\"\">Follow</button>" + "</div></div>";
 
 
             $(".rightBox").append(html);

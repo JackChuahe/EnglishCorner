@@ -30,12 +30,12 @@ namespace WebApplication1.communityConversation.communitySquare
                  */
                 string connectionStr = ConfigurationManager.ConnectionStrings["oracleCon"].ConnectionString;
                 OracleConnection myConnection = new OracleConnection(connectionStr);
-                OracleCommand myOracleCommand = new OracleCommand("userVerifyPK.updateUserInfo", myConnection); // 调用包 进行插入数据
+                OracleCommand myOracleCommand = new OracleCommand("communityOperation.fellowCommunity", myConnection); // 调用包 进行插入数据
                 myOracleCommand.CommandType = System.Data.CommandType.StoredProcedure; // 设置为访问存储类型形式
                 //设置参数  
                 OracleParameter[] prams = { 
-                                          new OracleParameter("v_userEmail", OracleType.DateTime,50),  
-                                          new OracleParameter("communityID",OracleType.VarChar,50),
+                                          new OracleParameter("v_userEmail", OracleType.VarChar,50),  
+                                          new OracleParameter("v_communityID",OracleType.VarChar,20),
                                            new OracleParameter("result",OracleType.VarChar,1),
 
                                       };
