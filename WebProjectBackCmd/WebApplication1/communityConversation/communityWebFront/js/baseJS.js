@@ -20,6 +20,20 @@ $(document).ready(function () {
     function getHeaderImg() {
         $.get("../../common/HttpRequest/getHeadImgAndUserEmail.ashx", {}, function (data) {
             if (data.length > 0) {
+                //已经登录
+                $.get("../community/isFollowedThisCommunity.ashx", { communityID: v_communityID }, function (isFollowed) {
+                    //判断是否已经加入该社区
+                   // alert(isFollowed);
+                    if (isFollowed = "True") {
+                        // 显示发表动态的框框
+                        $("#say").show();
+                    } else {
+                        $("#say").hide();
+                    }
+
+                });
+
+
                 // 有头像
                 //加载头像
                 var jsonValue = jQuery.parseJSON(data);
@@ -27,8 +41,7 @@ $(document).ready(function () {
                     var html = "<a id=\"goToWrite\" class=\"goToWrite\" href=\"javascript:clickToTop()\" title=\"back to write\"></a>";
                     $(".sideBar").append(html); //
 
-                    // 显示发表动态的框框
-                    $("#say").show();
+
 
                     $("#div_signIn").hide();
                     $("#div_headImg_User").show();

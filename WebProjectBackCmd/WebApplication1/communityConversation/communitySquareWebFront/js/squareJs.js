@@ -26,7 +26,7 @@ $(document).ready(function () {
             $("#" + i).hide();
            // $("#" + i).delay(500 * i * 0.2).animate({ top: 50 }, 200);
            //  $("#" + i).delay(500 * i * 0.2).slideTop(200);
-            $("#" + i).delay(500 * i * 0.2).fadeIn("slow");
+            $("#" + i).delay(500 * i * 0.23 + 80).fadeIn("slow");
         }
 
         ////////////

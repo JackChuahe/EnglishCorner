@@ -130,6 +130,7 @@
     <Content Include="communityConversation\communityWebFront\js\gototop.js" />
     <Content Include="communityConversation\communityWebFront\js\submitComment.js" />
     <Content Include="communityConversation\communityWebFront\testVisit.html" />
+    <Content Include="CommunityHeadImg\cm03.jpg" />
     <Content Include="testCommon.html" />
     <Content Include="UserContentsImage\contentimg1.jpg" />
     <Content Include="UserContentsImage\contentimg2.jpg" />
@@ -182,6 +183,9 @@
     </Compile>
     <Compile Include="communityConversation\community\getNowSubmitImg.ashx.cs">
       <DependentUpon>getNowSubmitImg.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="communityConversation\community\isFollowedThisCommunity.ashx.cs">
+      <DependentUpon>isFollowedThisCommunity.ashx</DependentUpon>
     </Compile>
     <Compile Include="communityConversation\myCommunity\getUserCommunityActiveAndComment.ashx.cs">
       <DependentUpon>getUserCommunityActiveAndComment.ashx</DependentUpon>
@@ -269,6 +273,7 @@
     <Content Include="communityConversation\communitySquare\communitySuqare.ashx" />
     <Content Include="communityConversation\communitySquare\createCommunity.ashx" />
     <Content Include="communityConversation\communitySquare\fellowCommunity.ashx" />
+    <Content Include="communityConversation\community\isFollowedThisCommunity.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -278,7 +283,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="allVideos\" />
-    <Folder Include="CommunityHeadImg\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
