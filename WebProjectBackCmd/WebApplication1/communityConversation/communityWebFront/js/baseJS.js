@@ -5,7 +5,7 @@ $(document).ready(function () {
     // 提取communityID
     var v_communityID = GetQueryString("communityID");
 
-    v_communityID = 'cm02';    // !!!
+    //v_communityID = 'cm02';    // !!!
     // 获取社区基本信息
     $.get("../community/getCommunityInfo.ashx", { communityID: v_communityID }, function (cInfo) {
         var json = jQuery.parseJSON(cInfo);

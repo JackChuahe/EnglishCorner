@@ -37,7 +37,7 @@
         //获取当前社区的ID communityID
         var v_communityID = GetQueryString("communityID");
 
-        v_communityID = "cm02";
+        //v_communityID = "cm02";
         //发送到后台
         //$("body").append("");
         $("#mask2").addClass("mask").fadeIn("fast");

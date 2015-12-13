@@ -1,0 +1,241 @@
+
+@media screen and (min-width: 1100px) {
+    .communitiesBox {
+        width: 1230px;
+        margin: auto;
+    }
+
+    .null{
+        height:110px
+    }
+    .rightBox {
+        width: 950px;
+        /*background-color: #9c9c9c;*/
+        float: right;
+    }
+
+    .leftBox {
+        width: 260px;
+        float: left;
+    }
+
+    .lBox {
+        width: 255px;
+        background-color: white;
+        margin: auto;
+        margin-bottom: 2px;
+        box-shadow: #9c9c9c 0 2px 2px;
+        border-radius: 3px;
+    }
+
+    .first {
+        height: 370px;
+    }
+
+    .second {
+        cursor: pointer;
+        margin: auto;
+        margin-bottom: 30px;
+        width: 200px;
+        height: 50px;
+        box-shadow: #9c9c9c 0px 1px 3px;
+        border-radius: 1px;
+
+    }
+
+    .second:hover {
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+    }
+
+    .img {
+        margin: 10px;
+        fill: #666666;
+        float: left;
+    }
+    svg{
+        width:28px;
+        height:28px ;
+    }
+
+    .second div{
+        text-align: center;
+        padding: 12px;
+        margin-left: 10px;
+        float: left;
+    }
+
+}
+
+
+
+
+@media screen and (max-width: 1099px ) {
+    .communitiesBox {
+        width: 950px;
+        margin: auto;
+    }
+
+    .null{
+        height: 30px;
+    }
+    .rightBox {
+        width: 950px;
+        /*background-color: #9c9c9c;*/
+        float: right;
+        margin: auto;
+
+    }
+
+    svg{
+        display: none;
+    }
+
+    .second div{
+        display: none;
+    }
+
+
+}
+
+
+@media screen and (max-width: 945px) {
+    .communitiesBox{
+        width: 711px;
+        margin: auto;
+    }
+
+    .rightBox{
+        width: 711px;
+        /*background-color: #9c9c9c;*/
+        margin: auto;
+
+    }
+}
+
+
+.box{
+    width: 217px;
+    height: 240px;
+    background-color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    box-shadow: #9c9c9c 0 2px 2px;
+    border-radius: 3px;
+    float: left;
+}
+
+.create{
+    width: 217px;
+    height: 240px;
+    background-image: url("../img/create.png");
+}
+
+.box:hover{
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.23), 0 4px 8px 0 rgba(56, 56, 56, 0.46);
+
+}
+
+.backImg{
+    width:217px ;
+    height: 120px;
+    /*background-image: url("../image/IMG_4899.webp");*/
+}
+
+
+
+.backImg img{
+    width:217px ;
+    height: 120px;
+}
+
+.firstUser{
+    margin-left: 15px;
+    margin-top: -15px;
+    position: absolute;
+    float: left;
+}
+.firstUser img{
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    box-shadow: #388e3c 0 0 2px ;
+}
+
+.disc{
+    width:217px ;
+    height: 120px;
+    font-family: 'Open Sans', Arial;
+}
+
+.communityName{
+    padding-left: 15px;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.activator{
+    padding:15px;
+    font-size: x-small;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.commentbtn {
+    text-align: center;
+    vertical-align: top;
+    outline:none;
+    font-family:'Microsoft JhengHei UI';
+    font-size: large;
+    border-radius: 2px;
+    border: none;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0);
+    float: right;
+    margin-right: 30px;
+    cursor: pointer
+
+}
+
+.commentbtn:hover {
+    box-shadow: #ffffff 0 0 1px;
+}
+
+/*
+*11种颜色选择
+*/
+.red{
+    background-color: #e53a36;
+}
+
+.dGreen{
+    background-color: #02897b;
+}
+.orange {
+    background-color: #ff7043;
+}
+.pink{
+    background-color: #eb407a;
+}
+.yellow{
+    background-color: #f8a826;
+}
+.gray{
+    background-color: #424242;
+}
+.green{
+    background-color: #689f38;
+}
+
+.blue{
+    background-color: #02abc0;
+}
+
+.brown{
+    background-color: #8d6e63;
+}
+
+.purple{
+    background-color: #7e57c1;
+}

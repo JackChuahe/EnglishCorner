@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Communities</title>
+    <link href="../../common/cssFrame/HeaderStyle.css" rel="stylesheet" />
+    <link href="../../common/cssFrame/FooterSideBarStyle.css" rel="stylesheet" />
+    <link href="css/CommunitiesStyle.css" rel="stylesheet" />
+    <script src="../../common/js/jquery-2.1.4.min.js"></script>
+    <script src="../../common/js/getUserHeadImgAndName.js"></script>
+    <script src="js/squareJs.js"></script>
+
+
+</head>
+<body class="body">
+<!-- 悬浮标题框 -->
+<div class="header">
+    <div class="floatHeader">
+        <div>
+            <a class="logo" href="../Html/Welcome.html" title="logo"></a>
+        </div>
+        <div id="div_headImg_User">
+            <a class="userHeadPic" href="#">
+                <img id="login_headImg" src="../image/headimg.png">
+            </a>
+            <a class="userName" href="#">
+                <div id="login_name">name</div>
+            </a>
+        </div>
+        <div id="div_signIn">
+            <div class="signBtn">
+                <a href="../../userVerify/loginWebFront/SignIn.html">
+                    <input type="button" name="Sign in" value="Sign in"
+                           id="sign_In" class="sign">
+                </a>
+            </div>
+        </div>
+    </div>
+    <!--导航bar-->
+    <div class="header_wrapper">
+        <div class="logo_min">
+            <div class="logo_min_img"></div>
+        </div>
+        <div class="navMenu">
+            <a href="#">
+                <div class="select">Welcome</div>
+            </a>
+            <a href="#">
+                <div class="select" style="border-bottom:2px solid #959595">Community</div>
+            </a>
+            <a href="#">
+                <div class="select">Videos</div>
+            </a>
+            <a href="#">
+                <div class="select">Listening</div>
+            </a>
+            <a href="#">
+                <div class="select">Sourse</div>
+            </a>
+
+        </div>
+    </div>
+</div>
+<!-- 主框体 -->
+
+<div class="communitiesBox">
+    <div style="height:110px"></div>
+    <!-- 左窗体 -->
+    <div class="leftBox">
+        <div class="lBox first">
+            <div style="height: 80px"></div>
+            <div class=" second" onclick="">
+                <svg  viewBox="0 0 48 48" class="img">
+                    <path d="M20 40V28h8v12h10V24h6L24 6 4 24h6v16z"></path>
+                </svg>
+                    <div>Home</div>
+            </div>
+            <div class=" second" onclick="">
+                <svg  viewBox="0 0 48 48" class="img">
+                    <path d="M18 24c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm10-6c0-2.21-1.79-4-4-4s-4 1.79-4 4 1.79 4 4 4 4-1.79 4-4zM24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm0 36c-8.84 0-16-7.16-16-16S15.16 8 24 8s16 7.16 16 16-7.16 16-16 16zm6-16c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"></path>
+                </svg>
+                <div>Followed</div>
+            </div>
+            <div class=" second" onclick="">
+                <svg  viewBox="0 0 48 48" class="img">
+                    <path d="M24 21.17l-9.41-9.41 6.58-6.58c1.56-1.56 4.1-1.56 5.66 0l6.58 6.58L24 21.17zm-9.41 15.07l6.58 6.58c1.56 1.56 4.1 1.56 5.66 0l6.58-6.58L24 26.83l-9.41 9.41zm-2.83-21.65l-6.58 6.58c-1.56 1.56-1.56 4.1 0 5.66l6.58 6.58L21.17 24l-9.41-9.41zm31.07 6.58l-6.58-6.58L26.83 24l9.41 9.41 6.58-6.58c1.57-1.56 1.57-4.1.01-5.66z"></path>
+                </svg>
+                <div>Square</div>
+            </div>
+        </div>
+    </div>
+    <!-- 右窗体-->
+
+    <div class="rightBox">
+
+        <a class="box create" href="">
+
+        </a>
+        
+        
+
+    </div>
+
+</div>
+<!--悬浮按钮-->
+
+<div class="sideBar">
+    <!--<a id="goToWrite" class="goToWrite" href="#" title="back to write"></a>-->
+    <a id="goToTop" class="goTop" href="javascript:clickToTop()" title="go to top">
+        <img src="../../common/image/right_bg.png" style="margin-top: 5px;margin-left: 5px;width: 35px;height: 35px">
+    </a>
+</div>
+
+    <script src="js/follow.js"></script>
+    <script>
+        // 给go to top按钮一个点击事件
+        function clickToTop() {
+            $("html,body").animate({ scrollTop: 0 }, 800);//点击go to top按钮时，以800的速度回到顶部，这里的800可以根据你的需求修改
+            return false;
+        };
+
+        $(document).ready(function () {
+            $("#goToTop").hide()//隐藏go to top按钮
+            $(".logo_min").hide()//隐藏 min logo
+            $(function () {
+                $(window).scroll(function () {
+                    if ($(this).scrollTop() > 200) {//当window的scrolltop距离大于1时，go to top按钮淡出，反之淡入
+
+                        $(".header_wrapper").css("background-color", "#FFFFFF");
+                        $(".logo_min").fadeIn();
+
+                        $("#goToTop").fadeIn();
+                        $(".floatHeader").fadeOut();
+
+                    } else {
+                        $(".header_wrapper").css("background-color", "rgba(218, 218, 218, 0.50)");
+                        $(".logo_min").fadeOut();
+                        $("#goToTop").fadeOut();
+                        $(".floatHeader").fadeIn();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

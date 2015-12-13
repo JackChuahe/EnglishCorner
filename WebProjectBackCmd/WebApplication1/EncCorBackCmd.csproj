@@ -64,10 +64,12 @@
     <Content Include="common\cssFrame\HeaderStyle.css" />
     <Content Include="common\image\bottom.png" />
     <Content Include="common\image\EnCor_logo.png" />
+    <Content Include="common\image\EnCor_logo_min.png" />
     <Content Include="common\image\logo_min.png" />
     <Content Include="common\image\V.png" />
     <Content Include="common\image\write.png" />
     <Content Include="common\image\X.png" />
+    <Content Include="common\js\getUserHeadImgAndName.js" />
     <Content Include="common\js\jquery-1.9.1.min.js" />
     <Content Include="common\js\jquery-2.1.4.js" />
     <Content Include="common\js\jquery-2.1.4.min.js" />
@@ -110,6 +112,12 @@
     <Content Include="common\uploadImg\js\fileinput_locale_zh.js" />
     <Content Include="common\uploadImg\js\plugins\canvas-to-blob.js" />
     <Content Include="common\uploadImg\js\plugins\canvas-to-blob.min.js" />
+    <Content Include="communityConversation\communitySquareWebFront\Communities.html" />
+    <Content Include="communityConversation\communitySquareWebFront\css\CommunitiesStyle.css" />
+    <Content Include="communityConversation\communitySquareWebFront\img\create.png" />
+    <Content Include="communityConversation\communitySquareWebFront\js\follow.js" />
+    <Content Include="communityConversation\communitySquareWebFront\js\gototop.js" />
+    <Content Include="communityConversation\communitySquareWebFront\js\squareJs.js" />
     <Content Include="communityConversation\communityWebFront\Community.html" />
     <Content Include="communityConversation\communityWebFront\js\submitContent.js" />
     <Content Include="communityConversation\myCommunityWebFront\myCommunity.html" />
@@ -162,6 +170,15 @@
     <Compile Include="common\class_\Md5.cs" />
     <Compile Include="common\HttpRequest\getHeadImgAndUserEmail.ashx.cs">
       <DependentUpon>getHeadImgAndUserEmail.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="communityConversation\communitySquare\communitySuqare.ashx.cs">
+      <DependentUpon>communitySuqare.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="communityConversation\communitySquare\createCommunity.ashx.cs">
+      <DependentUpon>createCommunity.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="communityConversation\communitySquare\fellowCommunity.ashx.cs">
+      <DependentUpon>fellowCommunity.ashx</DependentUpon>
     </Compile>
     <Compile Include="communityConversation\community\getNowSubmitImg.ashx.cs">
       <DependentUpon>getNowSubmitImg.ashx</DependentUpon>
@@ -249,6 +266,9 @@
     <Content Include="userVerify\createAccount\setProfileInfo.ashx" />
     <Content Include="userVerify\createAccount\reciveHeadImg.ashx" />
     <Content Include="communityConversation\community\getNowSubmitImg.ashx" />
+    <Content Include="communityConversation\communitySquare\communitySuqare.ashx" />
+    <Content Include="communityConversation\communitySquare\createCommunity.ashx" />
+    <Content Include="communityConversation\communitySquare\fellowCommunity.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
