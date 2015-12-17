@@ -1,12 +1,18 @@
 ﻿
+// 提取communityID
 
 
 //处理用户点击fellow事件
-function fellowToComnunity(v_communityID) {
+function fellowToComnunity() {
     //alert(communityID);
     //先判断是否有登录
-    $("#mask2").addClass("mask").fadeIn("fast");
-    $("#submitLoading").fadeIn("fast");
+    // 提取get方法的内容 获取communityID 
+    function GetQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+    var v_communityID = GetQueryString("communityID");
 
     $.get("../../common/HttpRequest/getHeadImgAndUserEmail.ashx", {}, function (data) {
         if (data.length > 0) {
@@ -14,38 +20,32 @@ function fellowToComnunity(v_communityID) {
             var jsonValue = jQuery.parseJSON(data);
             if (jsonValue.isLogin == "true") {
                 //有登录
-                
                 $.post("../communitySquare/fellowCommunity.ashx", { communityID: v_communityID }, function (isOK) {
                     //alert(isOK);
-                    //alert(isOK);
-                    if (isOK == '1') {
+                    if (isOK = '1') {
                         // 加入成功
                         //跳转到相应的社区去
                         document.getElementById("imge_attention").src = "../../common/image/V.png";
-                        $("#attention").html("Fellow success!");
+                        $("#attention").html("submit success!");
                         setTimeout(function () {
                             $("#mask2").fadeOut("fast");
                             $("#submitLoading").fadeOut("fast");
-                            window.location = "../communityWebFront/Community.html?communityID="+v_communityID;
-                        }, 1000);
+                            window.location = "../communityWebFront/Community.html?communityID=" + v_communityID;
+                        }, 2000);
                     } else {
                         //操作失败
                         document.getElementById("imge_attention").src = "../../common/image/X.png";
-                        $("#attention").html("You Have Fellowed!");
-                        setTimeout(function () {
-                            $("#mask2").fadeOut("fast");
-                            $("#submitLoading").fadeOut("fast");
-                        }, 1000);
+                        $("#attention").html("comit failed!");
                     }
                 });
             } else {
                 // 未登录的情况
-                window.location = "../../userVerify/loginWebFront/SignIn.html";
+                alert("Please Login first");
 
             }
         } else {
-            window.location = "../../userVerify/loginWebFront/SignIn.html";
-           //未登录的情况
+            alert("Please Login first");
+            //未登录的情况
         }
     });
 

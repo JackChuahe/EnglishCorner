@@ -199,7 +199,7 @@
 }
 
 .commentbtn:hover {
-    box-shadow: #ffffff 0 0 1px;
+    box-shadow: #ffffff 0 0 2px;
 }
 
 /*
@@ -238,4 +238,79 @@
 
 .purple{
     background-color: #7e57c1;
+}
+
+
+.mask {
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: 100%;
+    height: 100%;
+    background: #333;
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.submitLoading{
+    width: 400px;
+    height: 120px;
+    margin:auto;
+    margin-top: 100px;
+    padding: 10px;
+    position: fixed;
+    left: 400px;
+    z-index: 1100;
+    background-color: #ffffff;
+    border-radius: 10px;
+    float: left;
+    display: none;
+}
+.attention{
+margin-top: 5px;
+}
+.a_img{
+    margin-left: 10px;
+    width: 90px;
+    height: 90px;
+    float: left;
+}
+.a_img img{
+    width: 90px;
+    height: 90px;
+}
+
+#attention{
+    margin-top: 20px;
+    float: left;
+    width: 270px;
+    text-align: center;
+    /*background-color:#8f8f8f;*/
+    font-family: "Yu Gothic UI";
+    color: #4d4d4d;
+    font-size: 30px;
+}
+
+.add img{
+    width: 35px;
+    height: 35px;
+    border: none;
+    display: none;
+}
+
+
+@media screen and (min-width: 1080px) {
+    .submitLoading {
+        left: 35%;
+    }
+}
+@media screen and (max-width: 1079px) {
+    .submitLoading {
+        left:27%;
+    }
 }

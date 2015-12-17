@@ -20,6 +20,7 @@ $(document).ready(function () {
     function getHeaderImg() {
         $.get("../../common/HttpRequest/getHeadImgAndUserEmail.ashx", {}, function (data) {
             if (data.length > 0) {
+                $("#follow_in_community").show();
                 //已经登录
                 $.get("../community/isFollowedThisCommunity.ashx", { communityID: v_communityID }, function (isFollowed) {
                     //判断是否已经加入该社区
@@ -27,7 +28,9 @@ $(document).ready(function () {
                     if (isFollowed = "True") {
                         // 显示发表动态的框框
                         $("#say").show();
+                        $("#follow_in_community").hide();
                     } else {
+                        $("#follow_in_community").show();
                         $("#say").hide();
                     }
 

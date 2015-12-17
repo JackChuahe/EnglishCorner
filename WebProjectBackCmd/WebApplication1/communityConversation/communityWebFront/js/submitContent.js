@@ -34,7 +34,7 @@
             return false;
         }
 
-        //获取当前社区的ID communityID
+        //获取当前社区的ID communityID 
         var v_communityID = GetQueryString("communityID");
 
         //v_communityID = "cm02";
@@ -60,7 +60,7 @@
                 $("#mask2").fadeOut("fast");
                 $("#submitLoading").fadeOut("fast");
                 window.location.reload();//刷新当前页面
-            }, 3000);
+            }, 1500);
 
             //alert("ok");
         });

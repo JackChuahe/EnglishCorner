@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Improve your information</title>
+    <link href="../../common/cssFrame/HeaderStyle.css" rel="stylesheet" />
+    <link href="css/ImproveInfoStyle.css" rel="stylesheet" />
+
+    <script src="../../common/js/jquery-2.1.4.min.js"></script>
+    <script src="js/addPic.js"></script>
+
+    <!--uploadImg-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../common/uploadImg/css/fileinput.css" rel="stylesheet" />
+    <script src="../../common/uploadImg/bootstrap.min.js"></script>
+    <script src="../../common/uploadImg/js/fileinput.js"></script>
+    <script src="../../common/uploadImg/js/fileinput_locale_es.js"></script>
+    <script src="js/getUserHeadImgAndName.js"></script>
+    <script src="js/baseJs.js"></script>
+
+</head>
+<body class="body">
+<!-- 悬浮标题框 -->
+<div class="header">
+    <div class="floatHeader">
+        <div>
+            <a href="#" id="logo" class="logo" title="logo"></a>
+        </div>
+        <div id="div_headImg_User">
+            <a id="userHeadPic" class="userHeadPic" href="#">
+                <img id="login_headImg" src="../image/headimg.png">
+            </a>
+            <a href="#" id="userName" class="userName">
+                <div id="login_name">name</div>
+            </a>
+        </div>
+            <div id="div_signIn" class="signBtn">
+                <a href="../loginWebFront/SignIn.html">
+                    <input type="button" name="Sign in" value="Sign in"
+                           id="sign_In" class="sign">
+                </a>
+            </div>
+    </div>
+</div>
+<!-- 主框体 -->
+<div class="improveContainer">
+    <div style="height: 80px"></div>
+    <!--标题-->
+    <div class="titleSlogan">
+        Improve your information
+    </div>
+    <div style="height: 30px"></div>
+    <div class="improveBox">
+        <div class="info">
+            <div>
+                <div class="headImage">
+                    <img id="pre_img" src="../../UserHeadImg/default.png" />
+                </div>
+                <button id="addPic" class="addPhoto">Add your photo</button>
+               <hr/>
+                <div class="form">
+                    <p>Gender</p>
+                    <select  id="gender">
+                        <option value ="male">male</option>
+                        <option value ="female">female</option>
+                    </select>
+                    <p>Birthday</p>
+                    <!--<select id="year">
+                        <option value="male">Jau</option>
+                        <option value="female">Feb</option>
+                        <option value="female">March</option>
+                        <option value="female">March</option>
+                        <option value="female">May</option>
+                        <option value="female">Jun</option>
+                        <option value="female">July</option>
+                        <option value="female">Aug</option>
+                        <option value="female">Sept</option>
+                        <option value="female">Oct</option>
+                        <option value="female">Nov</option>
+                        <option value="female">Dec</option>
+                    </select>-->
+                    <input id="year" type="number" placeholder="year" min="1970" max="2016"/>
+                    <span>-</span>
+                    <input id="month" type="number" placeholder="month" min="1" max="12"/>
+                    <span>-</span>
+                    <input id="day" type="number" placeholder="day" min="1" max="31"/>
+                </div>
+                <input id="submit" type="button" class="submit sign signBtn" value="submit" />
+            </div>
+            <div class="show"></div>
+        </div>
+    </div>
+</div>
+<!--添加图片-->
+<div id="addImg" class="addImg">
+    <div class="topBar">
+        <a id="close_btn" href="#">
+            <div class="closeBtn closeBtnS" title="close the dialog"><span>×</span></div>
+        </a>
+    </div>
+    <div style="width:340px; ">
+        <form enctype="multipart/form-data">
+            <div class="form-group">
+                <label style="color: #3277e1">Set Your Image</label>
+                <input id="file-3" type="file" multiple=true>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="submitLoading" class="submitLoading">
+    <div class="attention">
+        <div id="x" class="a_img">
+            <img src="../image/X.png"/>
+        </div>
+        <div id="attention">submit failed</div>
+    </div>
+</div>
+
+<a id='mask' href='#' title='close this dialog'></a>
+
+<div id='mask2'></div>
+
+    <script>
+    $(document).ready(function () {
+        //当点击了关闭该弹窗的按钮时
+        $("#close_btn").on('click', function () {
+            //获取网络资源
+            $.get("../fillAllInfomation/getNowUserSubmitHeadImg.ashx", {}, function (url) {
+                alert(url);
+                if (url.length > 0) {
+                    // 有上传成功
+                    var pre_img = document.getElementById("pre_img");
+                    pre_img.src = url;
+                    $("#pre_img").show();
+                } else {
+                    //没有图片
+                    $("#pre_img").hide();
+                }
+            });
+
+            $("#addImg").fadeOut("slow");
+            $("#mask").fadeOut("slow");
+
+
+            return false;
+        });
+    });
+    </script>
+</body>
+</html>
