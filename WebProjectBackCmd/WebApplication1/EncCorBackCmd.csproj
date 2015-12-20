@@ -235,8 +235,8 @@
     <Compile Include="userVerify\createAccount\userActive.ashx.cs">
       <DependentUpon>userActive.ashx</DependentUpon>
     </Compile>
-    <Compile Include="userVerify\fillAllInfomation\getNowUserSubmitHeadImg.ashx.cs">
-      <DependentUpon>getNowUserSubmitHeadImg.ashx</DependentUpon>
+    <Compile Include="userVerify\fillAllInfomation\getNowUserUploadHeadImg.ashx.cs">
+      <DependentUpon>getNowUserUploadHeadImg.ashx</DependentUpon>
     </Compile>
     <Compile Include="userVerify\fillAllInfomation\reciveHeadImg.ashx.cs">
       <DependentUpon>reciveHeadImg.ashx</DependentUpon>
@@ -285,7 +285,7 @@
     <Content Include="communityConversation\community\isFollowedThisCommunity.ashx" />
     <Content Include="userVerify\fillAllInfomation\reciveHeadImg.ashx" />
     <Content Include="userVerify\fillAllInfomation\setProfileInfo.ashx" />
-    <Content Include="userVerify\fillAllInfomation\getNowUserSubmitHeadImg.ashx" />
+    <Content Include="userVerify\fillAllInfomation\getNowUserUploadHeadImg.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

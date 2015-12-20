@@ -81,10 +81,14 @@
                         document.getElementById("login_name").innerHTML = jsonValue.last_name;
                     } else {
                         $("#div_headImg_User").hide();
+                        alert("Please Login First");
+                        window.location = "../loginWebFront/SignIn.html";
                     }
                 } else {
                     //没有头像 隐藏头像div
                     $("#div_headImg_User").hide();
+                    alert("Please Login First");
+                    window.location = "../loginWebFront/SignIn.html";
                 }
             });
 

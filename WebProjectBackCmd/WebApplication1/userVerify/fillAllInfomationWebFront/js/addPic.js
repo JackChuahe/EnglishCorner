@@ -34,7 +34,7 @@ $(function ($) {
     $("#file-3").fileinput({
         showUpload: true,
         showCaption: false,
-        uploadUrl: '../fillAllInfomation/reciveHeadImg.ashx',
+        uploadUrl: "../fillAllInfomation/reciveHeadImg.ashx",
         browseClass: "btn btn-primary btn-lg",
         fileType: "image",
         previewFileIcon: "<i class='glyphicon glyphicon-king'></i>"

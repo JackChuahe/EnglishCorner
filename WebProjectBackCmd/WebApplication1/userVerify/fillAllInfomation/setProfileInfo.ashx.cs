@@ -23,6 +23,7 @@ namespace WebApplication1.userVerify.createAccount
             bool isOK = false;
             string userEmail = (string)context.Session["userEmail"];
             string headImg = (string)context.Session["userHeadImg"];
+            userEmail = "993687952@qq.com";
             if(userEmail == null)
             {
                 context.Response.Write("False");
@@ -59,7 +60,7 @@ namespace WebApplication1.userVerify.createAccount
                 myOracleCommand.CommandType = System.Data.CommandType.StoredProcedure; // 设置为访问存储类型形式
                 //设置参数  
                 OracleParameter[] prams = { 
-                                          new OracleParameter("v_userEmail", OracleType.DateTime,50),  
+                                          new OracleParameter("v_userEmail", OracleType.VarChar,50),  
                                           new OracleParameter("v_headImg",OracleType.VarChar,60),
                                           new OracleParameter("v_birthday",OracleType.DateTime),
                                           new OracleParameter("v_gender",OracleType.VarChar,8),

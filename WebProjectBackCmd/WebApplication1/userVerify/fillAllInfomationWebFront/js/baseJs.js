@@ -38,19 +38,35 @@ $(document).ready(function () {
             alert("Year Wrong !");
             return false;
         }
-        var birthday = v_year + "-" + v_month + "-" + v_day;
+        var v_birthday = v_year + "-" + v_month + "-" + v_day;
         //alert(birthday);
        // alert( gender+"  " +year + "  " + month + "  " + day);
-      
-        $.post("../fillAllInfomation/setProfileInfo.ashx", { gender: v_gender, birthday: v_birthday }, function (isOK) {
+        // alert("OK");
+        $("#submitLoading").fadeIn("fast");
+        $("#mask2").fadeIn("fast");
+        $.post("../fillAllInfomation/setProfileInfo.ashx", {birthday:v_birthday,gender:v_gender}, function (isOK) {
+         //   alert("s");
             if (isOK == "True") {
                 //更新成功!跳转至welcome页面
-                alert("Success to update Information");
+               // alert("Success to update Information");
+                document.getElementById("imge_attention").src = "../../common/image/V.png";
+                $("#attention").html("submit success!");
+                setTimeout(function () {
+                    $("#mask2").fadeOut("fast");
+                    $("#submitLoading").fadeOut("fast");
+                    window.location = "../../communityConversation/communitySquareWebFront/Communities.html";//跳转
+                }, 1500);
                // window.location = "";
             } else {
                 //更新资料失败
                 //窗口刷新
-                alert("failed to update Information");
+                document.getElementById("imge_attention").src = "../../common/image/X.png";
+                $("#attention").html("failed to update");
+                setTimeout(function () {
+                    $("#mask2").fadeOut("fast");
+                    $("#submitLoading").fadeOut("fast");
+                    window.location.reload();//跳转
+                }, 1500);
                 window.location.reload();//刷新当前页面
             }
         });

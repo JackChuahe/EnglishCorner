@@ -4,19 +4,19 @@ using System.Linq;
 using System.Web;
 using System.Web.SessionState;
 
-namespace WebApplication1.communityConversation.community
+namespace WebApplication1.userVerify.fillAllInfomation
 {
     /// <summary>
-    /// getNowSubmitImg 的摘要说明
-    /// 获取当前用户正在上传的content的图片的 url
+    /// getNowUserUploadHeadImg 的摘要说明
+    /// 获取用户上传上来的的个人信息的个人头像
     /// </summary>
-    public class getNowUserSubmitHeadImg : IHttpHandler, IRequiresSessionState
+    public class getNowUserUploadHeadImg : IHttpHandler, IRequiresSessionState
     {
 
         public void ProcessRequest(HttpContext context)
         {
             context.Response.ContentType = "text/plain";
-            string picUrl = (string)context.Session["contentImg"];
+            string picUrl = (string)context.Session["userHeadImg"];
             if (picUrl != null && picUrl != "")
             {
                 //若有图片
@@ -26,6 +26,7 @@ namespace WebApplication1.communityConversation.community
             {
                 context.Response.Write("");
             }
+
         }
 
         public bool IsReusable

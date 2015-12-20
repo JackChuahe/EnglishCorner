@@ -8,6 +8,7 @@
     <script src="../../common/js/jquery-1.9.1.min.js"></script>
     <script src="../../common/js/jquery.base64.js"></script>
     <link href="../../common/cssFrame/HeaderStyle.css" rel="stylesheet" />
+    <script src="../../common/js/jquery.base64.js"></script>
     <style>
         *{
             font-family: "Microsoft YaHei UI";
@@ -130,9 +131,12 @@
             var userEmailWithBase64 = GetQueryString("userEmail");
             //向后台请求激活
             $.get("../createAccount/userActive.ashx", { userEmail: userEmailWithBase64 }, function (isActiveOk) {
+
                 if (isActiveOk == "True") {
                     //激活成功
+                    $("#email").html($.base64.atob(userEmailWithBase64, true));
                     getHeaderImg();
+                   
                     //设置头像
                 } else {
                     alert("Active Failed! Redirction Now");
@@ -177,16 +181,18 @@
 
 </div>
 <div class="tellEmail">
-    <p>Your new email address is <span id="email">gagahejiashi@gmail.com</span></p>
+    <p>Your new email address is <span id="email"></span></p>
 </div>
 <div class="thanks">
-    <p>Thanks for creating a Google Account. Use it to subscribe to channels on YouTube, video chat for free, save favorite places on Maps, and lots more.</p>
+    <p>Thanks for creating a Encor Account. Use it to join to community on Encor, video chat for free, do your favorite, and lots more.</p>
 </div>
 
 <div class="continue">
-    <input type="button" name="Continue" value="Continue"
-           onclick=""
-           id="continue" class="sign">
+
+    <a href="../fillAllInfomationWebFront/Improveinformation.html">
+        <input type="button" name="Continue" value="Continue"
+               id="continue" class="sign">
+    </a>
 </div>
 
 <div class="img">

@@ -91,6 +91,7 @@
         </div>
     </div>
 </div>
+    
 <!--添加图片-->
 <div id="addImg" class="addImg">
     <div class="topBar">
@@ -111,9 +112,10 @@
 <div id="submitLoading" class="submitLoading">
     <div class="attention">
         <div id="x" class="a_img">
-            <img src="../image/X.png"/>
+            <img id="imge_attention" src="#" />
         </div>
-        <div id="attention">submit failed</div>
+        <!--<img src="../../common/image/X.png" />-->
+        <div id="attention">Waiting...</div>
     </div>
 </div>
 
@@ -122,12 +124,13 @@
 <div id='mask2'></div>
 
     <script>
+
     $(document).ready(function () {
         //当点击了关闭该弹窗的按钮时
         $("#close_btn").on('click', function () {
             //获取网络资源
-            $.get("../fillAllInfomation/getNowUserSubmitHeadImg.ashx", {}, function (url) {
-                alert(url);
+            $.get("../fillAllInfomation/getNowUserUploadHeadImg.ashx", {}, function (url) {
+               // alert(url);
                 if (url.length > 0) {
                     // 有上传成功
                     var pre_img = document.getElementById("pre_img");
