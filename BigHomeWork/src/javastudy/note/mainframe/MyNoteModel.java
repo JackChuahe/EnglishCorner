@@ -11,12 +11,22 @@ import java.util.List;
  */
 public class MyNoteModel {
 	// 模型
+	private String noteId; // ID 字段
 	private List<String> imageUrl = new ArrayList<String>(); // 图片地址
 	private String bookName; // 书名
 	private String sourceContent; // 原文
 	private String myNote; // 我的笔记
 	private String Label; // 标签
-	private String time;  //时间
+	private String time; // 时间
+
+	public String getNoteId() {
+		return noteId;
+	}
+
+	public void setNoteId(String noteId) {
+		this.noteId = noteId;
+	}
+
 	public String getTime() {
 		return time;
 	}

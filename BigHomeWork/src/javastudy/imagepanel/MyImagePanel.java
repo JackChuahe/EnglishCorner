@@ -17,8 +17,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class MyImagePanel extends JPanel {
-	private static final int WIDTH = 60;
-	private static final int HEIGHT = 85;
+//	 private static final int WIDTH = 60;
+//	 private static final int HEIGHT = 85;
+	private int WIDTH = 60;
+	private int HEIGHT = 85;
 	private JButton moveToTrash; // 删除按钮
 	private MyImagePanel self = this;
 	private Color defaultColor = this.getBackground();
@@ -28,6 +30,17 @@ public class MyImagePanel extends JPanel {
 	}
 
 	private String imagePath;
+
+	// 重载 构造函数
+	public MyImagePanel(String imagePath, int width, int height) {
+		this.imagePath = imagePath;
+		WIDTH = width;
+		HEIGHT = height;
+		initUI(); // 初始化ui
+		addAction(); // 添加事件
+
+
+	}
 
 	// 构造函数
 	public MyImagePanel(String imagePath) {

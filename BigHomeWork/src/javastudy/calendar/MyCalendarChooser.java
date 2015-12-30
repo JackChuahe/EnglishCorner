@@ -165,7 +165,7 @@ public class MyCalendarChooser extends JPanel {
 		}
 
 		this.add(centerPanel, BorderLayout.CENTER);
-		int year = Integer.parseInt(yearBox.getItemAt(0).toString());
+		int year = Integer.parseInt(yearBox.getSelectedItem().toString());
 		int month = Integer.parseInt(monthBox.getSelectedItem().toString());
 		updateDays(year, month); // 更新界面
 		clearAll(); // 先清楚所有界面效果
@@ -200,11 +200,13 @@ public class MyCalendarChooser extends JPanel {
 		monthBox.setMaximumRowCount(5);
 		monthBox.setSelectedIndex(month - 1);
 
-		// 初始化年
-		for (int i = 0; i < YEAR_LEN; i++) {
+		// 初始化年 可以最多选择两年前的某个时间
+		for (int i = -2; i < YEAR_LEN; i++) {
 			years.addElement(yearAdd + i + "");//
 			yearBox.addItem(yearAdd + i + ""); // 初始化 年
 		}
+
+		yearBox.setSelectedItem(defaultYear); // 设置年是当前年
 
 		//
 
@@ -214,8 +216,6 @@ public class MyCalendarChooser extends JPanel {
 		 */
 
 	}
-
-
 
 	/**
 	 * 初始化界面
@@ -388,7 +388,7 @@ public class MyCalendarChooser extends JPanel {
 		df = new SimpleDateFormat("dd");// 设置日期格式
 		String tempStr = df.format(new Date());// 获得当前日期
 
-		yearBox.setSelectedIndex(0);
+		yearBox.setSelectedItem(defaultYear);
 		monthBox.setSelectedIndex(month - 1);
 
 		setValue(Integer.parseInt(defaultYear), Integer.parseInt(defaultMonth),

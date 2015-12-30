@@ -16,9 +16,11 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import javastudy.calendar.MyCalendarChooser;
+import javastudy.dboperation.OpreateDB;
 import javastudy.imagepanel.MyImagePanel;
 
 import javax.swing.Box;
@@ -31,8 +33,10 @@ import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
@@ -44,6 +48,8 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import javax.swing.event.PopupMenuEvent;
+import javax.swing.event.PopupMenuListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
@@ -77,6 +83,9 @@ public class MainFuntionFrame {
 	private JTextField searchTextField; // 搜索框
 	private JTextArea searchTextArea; // 全文检索使用的搜索框
 	private JPanel alterPanel; // 搜索栏上面可替换的panel
+	private int selectedIndex; // 点击右击的位置
+
+	private List<EditMyNotePagePanel> myOpenedNotes = new LinkedList<EditMyNotePagePanel>(); // 已经打开的的笔记
 
 	/**
 	 * 构造函数
@@ -244,6 +253,85 @@ public class MainFuntionFrame {
 
 		tabPane.setComponentAt(1, myNotePage); // 加入到tab
 		addActionForMyNotePage(); // 添加事件
+		addPopMenu(); // 添加弹出菜单
+
+	}
+
+	/**
+	 * 添加弹出菜单
+	 */
+	private void addPopMenu() {
+		// pop mune
+		JPopupMenu jpm = new JPopupMenu();
+		JMenuItem throughOut = new JMenuItem(" 查 看 ");
+		JMenuItem edit = new JMenuItem(" 编 辑 ");
+		JMenuItem delete = new JMenuItem(" 删 除 ");
+		throughOut.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				createNewTabPanel(); // 产生一个新的tab窗口
+			}
+		});
+		// 编辑
+		edit.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				createNewTabPanel(); // 产生一个新的tab窗口
+			}
+		});
+		// 删除菜单
+		delete.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				prepareForDelete(); // 准备删除
+			}
+		});
+
+		jpm.add(throughOut);
+		jpm.add(edit);
+		jpm.addSeparator();
+		jpm.add(delete);
+
+		// 弹出菜单
+		jpm.addPopupMenuListener(new PopupMenuListener() {
+
+			@Override
+			public void popupMenuWillBecomeVisible(PopupMenuEvent e) {
+			}
+
+			@Override
+			public void popupMenuWillBecomeInvisible(PopupMenuEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void popupMenuCanceled(PopupMenuEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+		});
+
+		list.setComponentPopupMenu(jpm);
+
+	}
+
+	/**
+	 * 准备删除
+	 */
+	private void prepareForDelete() {
+		// 先询问用户是否真的要删除吗？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？
+		JOptionPane.showMessageDialog(mainFrame, "您真的要删除吗？？？？？？？？？？？", "警惕哟",
+				JOptionPane.WARNING_MESSAGE);
+		// 判断用户选择
+		if (false) {
+			// 放弃删除
+		} else {
+			// 同意删除
+			OpreateDB.deleteFromDB(listModel.getElementAt(selectedIndex));
+			listModel.remove(selectedIndex);
+		}
 	}
 
 	/**
@@ -266,21 +354,47 @@ public class MainFuntionFrame {
 
 		});
 
-		//list的双击和右击事件
+		// list的双击和右击事件
 		list.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				// 右键事件
 				if (e.isMetaDown()) {// 检测鼠标右键单击
 					// System.out.println(e.getX() + "   " + e.getY());
-					int index = e.getY() / 80;  //获取当前被右键的项
-					list.setSelectedIndex(index);   //设置被显示
+					selectedIndex = e.getY() / 80; // 获取当前被右键的项
+					list.setSelectedIndex(selectedIndex); // 设置被显示
 
 				} else if (e.getClickCount() == 2) {// 处理双击事件
-
+					createNewTabPanel(); // 产生一个新的tab窗口
 				}
 			}
 		});
 
+	}
+
+	/**
+	 * 创建一个新的tab窗口
+	 */
+	private void createNewTabPanel() {
+		boolean isCreate = true;
+		int i = 2;
+		for (i = 2; i < tabPane.getTabCount(); i++) {
+			EditMyNotePagePanel myEditPane = (EditMyNotePagePanel) tabPane
+					.getComponentAt(i);
+			if (myEditPane.getMyNote().getNoteId()
+					.equals(listModel.getElementAt(selectedIndex).getNoteId())) {
+				isCreate = false;
+				break;
+			}
+		}
+
+		//
+		if (isCreate) {
+			EditMyNotePagePanel testPane = new EditMyNotePagePanel(null);
+			tabPane.add("test", testPane);
+			tabPane.setSelectedIndex(tabPane.getComponentCount() - 1);
+		} else {
+			tabPane.setSelectedIndex(i); // 如果已经创建了的话 就直接进行显示 不需要重新创建
+		}
 	}
 
 	/**
